@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilocale - Scalingi Apartments Sperlonga</title>
+    <meta name="description" content="Bilocale moderno a Sperlonga, a pochi passi dal mare. Appartamento completamente arredato con tutti i comfort per le tue vacanze.">
+    <meta name="keywords" content="bilocale sperlonga, casa vacanze, appartamento mare, affitto vacanze">
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css?v=20250828" />
+  <link rel="stylesheet" href="booking.css" />
+  <!-- EmailJS for form submission -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">Scalingi</div>
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-links">
+            <li><a href="index.html#home" data-lang="nav-home">Home</a></li>
+            <li><a href="index.html#about" data-lang="nav-about">Chi Siamo</a></li>
+            <li><a href="index.html#apartments" data-lang="nav-apartments">Appartamenti</a></li>
+            <li><a href="index.html#reviews" data-lang="nav-reviews">Recensioni</a></li>
+            <li><a href="index.html#experience" data-lang="nav-experience">Esperienza</a></li>
+            <li><a href="index.html#contact" data-lang="nav-contact">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="language-toggle">
+          <button class="flag-button active" data-lang="it" title="Italiano">
+            <span class="flag-emoji">🇮🇹</span>
+          </button>
+          <button class="flag-button" data-lang="en" title="English">
+            <span class="flag-emoji">🇬🇧</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-background">
+          <img src="src/assets/bilocale/copertina.jpeg" alt="Bilocale Sperlonga - Vista Esterno" />
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="hero-subtitle" data-lang="bilocale-hero-subtitle">Il Bilocale</span>
+              <span class="hero-main" data-lang="bilocale-hero-title">Family Duo</span>
+              <span class="hero-description" data-lang="bilocale-hero-description">Comfort smart a due passi dal mare</span>
+            </h1>
+          </div>
+          <div class="hero-cta">
+            <a href="#gallery" class="cta-button" data-lang="bilocale-hero-cta">Scopri gli Spazi</a>
+            <a href="#booking" class="cta-button secondary" data-lang="bilocale-hero-book">Prenota Ora</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-dot"></div>
+        </div>
+      </section>
+
+      <!-- Apartment Overview Section -->
+      <section id="overview" class="about">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="overview-title-accent">Il Tuo</span>
+            <span class="title-main" data-lang="overview-title-main">Bilocale</span>
+          </h2>
+          <p class="section-description text-center" data-lang="overview-description">
+            Un appartamento moderno e accogliente, perfetto per coppie e piccole famiglie che cercano comfort, stile e una posizione strategica a Sperlonga. </br>Ideale anche per giovani coppie, dispone di culla e seggiolone su richiesta ed è situato a due passi dalla spiaggia, così da poter rientrare facilmente durante le ore più calde della giornata.
+          </p>
+
+          <div class="about-cards">
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3 data-lang="bilocale-spaces-title">Spazi Ottimizzati</h3>
+              <p data-lang="bilocale-spaces-desc">
+                <strong>Camera matrimoniale</strong> con armadi, <strong>soggiorno con divano letto</strong> 
+                per ospiti aggiuntivi, <strong>cucina completamente attrezzata</strong> e bagno con doccia. 
+                Ogni ambiente è progettato per il massimo comfort.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3 data-lang="bilocale-location-title">Posizione Strategica</h3>
+              <p data-lang="bilocale-location-desc">
+                A soli <strong>150 metri dalla spiaggia</strong> e <strong>1.4 km dal centro storico</strong>. 
+                Il Lungomare con supermercati, ristoranti e tutti i servizi essenziali nelle immediate vicinanze per un 
+                soggiorno senza pensieri.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-wifi"></i>
+              </div>
+              <h3 data-lang="bilocale-comfort-title">Comfort Moderni</h3>
+              <p data-lang="bilocale-comfort-desc">
+                <strong>Aria condizionata</strong>, WiFi ad alta velocità, TV Smart, cucina con tutti gli elettrodomestici. 
+                Biancheria e asciugamani inclusi. <strong>Perfetto anche per smart working</strong> con spazio 
+                dedicato al lavoro.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3 data-lang="bilocale-parking-title">Parcheggio Incluso</h3>
+              <p data-lang="bilocale-parking-desc">
+                <strong>Posto auto privato gratuito</strong> all'interno della proprietà. Non dovrai più 
+                preoccuparti di trovare parcheggio durante l'alta stagione. Spazio anche per biciclette 
+                nel giardino comune.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photo Gallery -->
+      <section id="gallery" class="apartments">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="title-accent" data-lang="gallery-title-accent">Galleria</span>
+            <span class="title-main" data-lang="gallery-title-main">Fotografica</span>
+          </h2>
+          <p class="section-description text-center" data-lang="gallery-description">
+            Scopri ogni angolo del tuo bilocale attraverso queste immagini che mostrano 
+            gli spazi, i comfort e l'attenzione ai dettagli
+          </p>
+          
+          <div class="apartments-grid">
+            <div class="apartment-card" data-gallery-item="kitchen">
+              <div class="apartment-image">
+                <img src="src/assets/bilocale/Cucina.jpeg" alt="Cucina moderna bilocale" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="gallery-kitchen-title">Cucina Attrezzata</h3>
+                <p class="apartment-description" data-lang="gallery-kitchen-desc">
+                  Cucina completa con frigorifero, piano cottura, e tutti gli utensili necessari 
+                  per preparare i tuoi pasti preferiti durante il soggiorno.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="living">
+              <div class="apartment-image">
+                <img src="src/assets/bilocale/Salone_cucina.jpeg" alt="Soggiorno accogliente" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="gallery-living-title">Soggiorno Luminoso</h3>
+                <p class="apartment-description" data-lang="gallery-living-desc">
+                  Zona living confortevole con divano letto, perfetta per rilassarsi dopo una giornata 
+                  al mare o per ospitare un terzo ospite.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="bedroom">
+              <div class="apartment-image">
+                <img src="src/assets/bilocale/Camera_matrimoniale.jpeg" alt="Camera da letto matrimoniale" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="gallery-bedroom-title">Camera Matrimoniale</h3>
+                <p class="apartment-description" data-lang="gallery-bedroom-desc">
+                  Camera da letto spaziosa e confortevole con letto matrimoniale, armadio capiente 
+                  e tutti i comfort per un riposo perfetto e con possibilita' di inseriere una culla.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="bathroom">
+              <div class="apartment-image">
+                <img src="src/assets/bilocale/Bagno.jpeg" alt="Bagno moderno" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="gallery-bathroom-title">Bagno Completo</h3>
+                <p class="apartment-description" data-lang="gallery-bathroom-desc">
+                  Bagno con doccia, asciugacapelli e set di cortesia per il 
+                  massimo della comodità durante il soggiorno.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="details">
+              <div class="apartment-image">
+                <img src="src/assets/bilocale/Esterno_4.jpeg" alt="Dettagli interni eleganti" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="gallery-details-title">Dettagli di Stile</h3>
+                <p class="apartment-description" data-lang="gallery-details-desc">
+                  Ogni dettaglio è curato con attenzione per creare un ambiente accogliente e raffinato 
+                  che fa sentire a casa.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="exterior">
+              <div class="apartment-image">
+                <img src="src/assets/bilocale/Giardino.jpeg" alt="Esterno dell'appartamento" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="gallery-exterior-title">Spazio Esterno</h3>
+                <p class="apartment-description" data-lang="gallery-exterior-desc">
+                  Vista esterna dell'appartamento con accesso al giardino condiviso, parcheggio bici e posto auto 
+                  privato incluso nel prezzo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Platforms Section -->
+      <section id="booking" class="booking-platforms">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="book-bilocale">Prenota il</span>
+            <span class="title-main" data-lang="book-bilocale-title">Bilocale</span>
+          </h2>
+          <p class="section-description text-center" data-lang="booking-bilocale-intro">
+            Scegli la piattaforma che preferisci per prenotare il tuo soggiorno nel bilocale
+          </p>
+          
+          <div class="booking-cards">
+            <div class="booking-card">
+              <div class="booking-icon">
+                <i class="fas fa-bed"></i>
+              </div>
+              <h3 data-lang="booking-com-title">Booking.com</h3>
+              <p data-lang="booking-com-bilocale-desc">Prenota il bilocale su una delle piattaforme più affidabili al mondo</p>
+              <a href="https://www.booking.com/hotel/it/scalingi-family-apartments.it.html" target="_blank" class="booking-link" data-lang="booking-com-link">
+                Vai su Booking.com
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="booking-card">
+              <div class="booking-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3 data-lang="airbnb-title">Airbnb</h3>
+              <p data-lang="airbnb-bilocale-desc">Scopri il bilocale sulla piattaforma di casa condivisa</p>
+              <a href="https://airbnb.it/h/bilscalingi" target="_blank" class="booking-link" data-lang="airbnb-bilocale-link">
+                Prenota su Airbnb
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="booking-card featured">
+              <div class="booking-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h3 data-lang="direct-contact-title">Contatto Diretto</h3>
+              <p data-lang="direct-contact-bilocale-desc">Contattaci per disponibilità, offerte speciali e condizioni personalizzate</p>
+              <a href="index.html#contact" class="booking-link featured-link" data-lang="direct-contact-link">
+                Contattaci Ora
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features & Services -->
+      <section id="features" class="reviews">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="features-title-accent">Caratteristiche</span>
+            <span class="title-main" data-lang="features-title-main">e Servizi</span>
+          </h2>
+          <p class="section-description text-center" data-lang="features-description">
+            Tutti i comfort e i servizi che rendono il tuo soggiorno indimenticabile
+          </p>
+          
+          <div class="reviews-container">
+            <div class="reviews-slider">
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-home"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="feature-spaces-title">Spazi Interni</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="bilocale-space-1">✓ Camera da letto matrimoniale</li>
+                  <li data-lang="bilocale-space-2">✓ Soggiorno con divano letto</li>
+                  <li data-lang="bilocale-space-3">✓ Cucina completamente attrezzata</li>
+                  <li data-lang="bilocale-space-4">✓ Bagno con doccia</li>
+                  <li data-lang="bilocale-space-5">✓ Giardino privato</li>
+                </ul>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-wifi"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="feature-tech-title">Tecnologia & Comfort</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="comfort-1">✓ Aria condizionata e Riscaldamento</li>
+                  <li data-lang="comfort-2">✓ Biancheria e asciugamani inclusi</li>
+                  <li data-lang="comfort-3">✓ Wi-Fi gratuito ad alta velocità</li>
+                  <li data-lang="comfort-4">✓ TV Smart</li>
+                  <li data-lang="comfort-5">✓ Culla per bambini (su richiesta)</li>
+                </ul>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="feature-kitchen-title">Cucina Completa</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="kitchen-1">✓ Frigorifero con freezer</li>
+                  <li data-lang="kitchen-2">✓ Piano cottura a gas</li>
+                  <li data-lang="kitchen-3">✓ Macchina del caffè</li>
+                  <li data-lang="kitchen-4">✓ Stoviglie e posate complete</li>
+                  <li data-lang="kitchen-5">✓ Seggiolone bambino</li>
+                </ul>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-car"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="feature-services-title">Servizi Extra</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="service-1">✓ Parcheggio privato gratuito</li>
+                  <li data-lang="service-2">✓ Lavatrice e stenditoio disponibile</li>
+                  <li data-lang="service-3">✓ Asciugacapelli</li>
+                  <li data-lang="service-4">✓ Set cortesia bagno</li>
+                  <li data-lang="service-5">✓ Spazio biciclette nel giardino</li>
+                </ul>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="feature-safety-title">Sicurezza</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="safety-1">✓ Rilevatore di monossido di carbonio</li>
+                  <li data-lang="safety-2">✓ Rilevatore di fumo</li>
+                  <li data-lang="safety-3">✓ Area esterna videosorvegliata</li>
+                  <li data-lang="safety-4">✓ Estintore</li>
+                </ul>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-bus"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="feature-transport-title">Trasporti & Collegamenti</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="transport-1">✓ Fermata autobus di fronte casa (50 metri)</li>
+                  <li data-lang="transport-2">✓ Stazione ferroviaria Fondi–Sperlonga a 11 km</li>
+                  <li data-lang="transport-3">✓ Aeroporti di Napoli e Roma a 110 km</li>
+                  <li data-lang="transport-4">✓ Servizio navetta (pagamento extra) su richiesta</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Location Section -->
+      <section id="location" class="experience">
+        <div class="container">
+          <div class="experience-content">
+            <div class="experience-text">
+              <h2 class="section-title">
+                <span class="title-accent" data-lang="location-title-accent">Posizione</span>
+                <span class="title-main" data-lang="location-title-main">Strategica</span>
+              </h2>
+              <p class="section-description" data-lang="location-description">
+                Il bilocale si trova nel cuore di Sperlonga, all'inizio del lungomare e della pista ciclabile, in una posizione privilegiata che ti permette 
+                di raggiungere facilmente tutte le attrazioni principali a piedi.
+              </p>
+            </div>
+            
+            <div class="experience-grid">
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-umbrella-beach"></i>
+                </div>
+                <h3 data-lang="location-beach-title">Spiaggia</h3>
+                <p data-lang="location-beach-desc">150 metri - 3 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-beach-detail">Sabbia dorata e mare cristallino</span>
+                  <i class="fas fa-water"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <h3 data-lang="location-center-title">Centro Storico</h3>
+                <p data-lang="location-center-desc">1.4 Km - 20 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-center-detail">Borgo medievale e ristoranti</span>
+                  <i class="fas fa-utensils"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3 data-lang="location-shop-title">Supermercato</h3>
+                <p data-lang="location-shop-desc">500 metri - 7 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-shop-detail">Tutti i prodotti essenziali</span>
+                  <i class="fas fa-shopping-basket"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-history"></i>
+                </div>
+                <h3 data-lang="location-museum-title">Villa di Tiberio</h3>
+                <p data-lang="location-museum-desc">2.8 km - 40 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-museum-detail">Sito archeologico e museo</span>
+                  <i class="fas fa-monument"></i>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-anchor"></i>
+                </div>
+                <h3 data-lang="location-port-title">Porto</h3>
+                <p data-lang="location-port-desc">1.5 km - 15 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-port-detail">Torre Truglia, Passeggiate sul molo e noleggio barche</span>
+                  <i class="fas fa-ship"></i>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-briefcase-medical"></i>
+                </div>
+                <h3 data-lang="location-health-title">Farmacie e Ambulatorio</h3>
+                <p data-lang="location-health-desc">300 metri - 5 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-health-detail">Farmacie e presidio ambulatorio vicini</span>
+                  <i class="fas fa-notes-medical"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="contact-content">
+            <div class="contact-info">
+              <h2 class="section-title">
+                <span class="title-accent" data-lang="contact-bilocale-accent">Contattaci </span>
+                <span class="title-main" data-lang="contact-bilocale-main">Direttamente</span>
+              </h2>
+              <p class="section-description left-align" data-lang="contact-bilocale-description">
+                Pronto a vivere una vacanza indimenticabile a Sperlonga? Contattaci per prenotare il bilocale.
+              </p>
+              
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div>
+                    <strong data-lang="contact-address-label">Indirizzo</strong>
+                    <span data-lang="contact-address">Via Lepanto, Sperlonga (LT), Italia<br>Condominio "IRIS"</span>
+                  </div>
+                </div>
+                
+                <!-- <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <strong data-lang="contact-email-label">Email</strong>
+                    <span>info@scalingiapartments.com</span>
+                  </div>
+                </div> -->
+              </div>
+              
+              <div class="booking-cta">
+                <a href="#booking" class="cta-button primary" data-lang="contact-cta">Prenota Ora</a>
+                <!-- <a href="https://wa.me/393331234567" class="cta-button secondary">
+                  <i class="fab fa-whatsapp"></i> WhatsApp
+                </a> -->
+              </div>
+            </div>
+            
+            <div class="contact-map">
+              <img src="src/assets/myhouse_horizontal.png" alt="Sperlonga Map" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Gallery Modal -->
+      <div id="gallery-modal" class="gallery-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+          <button class="modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+          
+          <div class="modal-image-container">
+            <img id="modal-image" src="" alt="" />
+            <div class="modal-navigation">
+              <button class="nav-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+          
+          <div class="modal-info">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            
+            <!-- Gallery grid for additional photos -->
+            <div class="modal-gallery" id="modal-gallery">
+              <!-- Additional photos will be populated here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">Scalingi</div>
+            <p class="footer-tagline" data-lang="footer-tagline">
+              Ospitalità autentica a due passi dal mare di Sperlonga
+            </p>
+            <div class="footer-social">
+              <!-- <a href="https://wa.me/393331234567" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a> -->
+              <a href="https://www.booking.com/hotel/it/scalingi-family-apartments.it.html" target="_blank" aria-label="Booking.com">
+                <i class="fas fa-bed"></i>
+              </a>
+              <a href="https://www.airbnb.it/h/trilocalescalingi" target="_blank" aria-label="Airbnb">
+                <i class="fab fa-airbnb"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-appartamenti">Appartamenti</h4>
+            <ul class="footer-links">
+              <li><a href="bilocale.html" data-lang="footer-bilocale">Bilocale</a></li>
+              <li><a href="trilocale.html" data-lang="footer-trilocale">Trilocale</a></li>
+              <li><a href="index.html#apartments" data-lang="footer-tutti">Tutti gli Appartamenti</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-informazioni">Informazioni</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#about" data-lang="footer-chi-siamo">Chi Siamo</a></li>
+              <li><a href="index.html#experience" data-lang="footer-esperienza">Esperienza Sperlonga</a></li>
+              <li><a href="index.html#reviews" data-lang="footer-recensioni">Recensioni</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-contatti">Contatti</h4>
+            <div class="footer-contact">
+              <p data-lang="footer-indirizzo">
+                <i class="fas fa-map-marker-alt"></i>
+                Via Lepanto, Sperlonga (LT)
+              </p>
+              <!-- <p data-lang="footer-email">
+                <i class="fas fa-envelope"></i>
+                info@scalingiapartments.com
+              </p> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <p data-lang="footer-copyright">
+              © 2025 Scalingi Apartments. Tutti i diritti riservati.
+            </p>
+          </div>
+          <div class="footer-legal">
+            <span data-lang="footer-privacy">Privacy Policy</span>
+            <span data-lang="footer-terms">Termini di Servizio</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="script.js?v=20251207" defer></script>
+  <script src="app-config.js"></script>
+  <script src="booking.js" defer></script>
+  </body>
+</html>

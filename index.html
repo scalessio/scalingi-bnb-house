@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scalingi Apartments - Sperlonga</title>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css?v=20250828" />
+  <link rel="stylesheet" href="booking.css" />
+  <!-- EmailJS for form submission -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">Scalingi</div>
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-links">
+            <li><a href="#home" data-lang="nav-home">Home</a></li>
+            <li><a href="#about" data-lang="nav-about">Chi Siamo</a></li>
+            <li><a href="#apartments" data-lang="nav-apartments">Appartamenti</a></li>
+            <li><a href="#reviews" data-lang="nav-reviews">Recensioni</a></li>
+            <li><a href="#experience" data-lang="nav-experience">Esperienza</a></li>
+            <li><a href="#contact" data-lang="nav-contact">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="language-toggle">
+          <button class="flag-button active" data-lang="it" title="Italiano">
+            <span class="flag-emoji">🇮🇹</span>
+          </button>
+          <button class="flag-button" data-lang="en" title="English">
+            <span class="flag-emoji">🇬🇧</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-background">
+          <img src="src/assets/sperlonga_hero_cartoon.jpeg" alt="Sperlonga Beach Sunset - Artistic View" />
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="hero-subtitle" data-lang="hero-discover">Scopri</span>
+              <span class="hero-main" data-lang="hero-title">Sperlonga</span>
+              <span class="hero-description" data-lang="hero-subtitle">Ed i nostri appartamenti vicinissimi al mare</span>
+            </h1>
+          </div>
+          <div class="hero-cta">
+            <a href="#apartments" class="cta-button" data-lang="hero-cta">Esplora gli Appartamenti</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-dot"></div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="about-title-accent">Chi</span>
+            <span class="title-main" data-lang="about-title-main">Siamo</span>
+          </h2>
+          <p class="section-description text-center" data-lang="about-description">
+            Una piccola realtà a gestione familiare, dove l'ospitalità genuina incontra 
+            la comodità moderna a due passi dal mare di Sperlonga
+          </p>
+
+          <div class="about-cards">
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 data-lang="family-title">Gestione Familiare</h3>
+              <p data-lang="family-desc">
+                Siamo Antonio e la famiglia Scalingi. Offriamo i nostri alloggi da <strong>oltre 15 anni</strong> 
+                con passione e dedizione. Viviamo al piano superiore della stessa struttura, garantendo 
+                assistenza immediata e consigli autentici per vivere al meglio Sperlonga.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3 data-lang="location-title">Posizione Privilegiata</h3>
+              <p data-lang="location-desc">
+                A soli <strong>200 metri dalla spiaggia</strong> e all'inizio del lungomare con pista ciclabile. 
+                Centro storico e porto raggiungibili in 15-20 minuti a piedi. Bar, ristoranti, pizzerie 
+                e supermercati nelle immediate vicinanze.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3 data-lang="apartments-title">Due Soluzioni Comfort</h3>
+              <p data-lang="apartments-desc">
+                <strong>Bilocale</strong> soleggiato per coppie e piccole famiglie con giardino privato. 
+                <strong>Trilocale</strong> luminoso con due camere per famiglie fino a 4 persone. 
+                Unità indipendenti per massima privacy.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3 data-lang="services-title">Servizi Completi</h3>
+              <p data-lang="services-desc">
+                <strong>Posto auto privato gratuito</strong>, giardino recintato con tavolo esterno, 
+                aria condizionata, WiFi veloce, lavatrice, TV e cucina completamente attrezzata. 
+                Self check-in tramite cassetta di sicurezza.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <h3 data-lang="remote-title">Remote Working</h3>
+              <p data-lang="remote-desc">
+                Spazio di lavoro dedicato con WiFi ad alta velocità. Ambiente tranquillo ideale 
+                per lo <strong>smart working</strong> con la possibilità di godersi il mare 
+                durante le pause. Perfetto per chi lavora in mobilità.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-bicycle"></i>
+              </div>
+              <h3 data-lang="activities-title">Attività & Relax</h3>
+              <p data-lang="activities-desc">
+                Deposito bici nel giardino per percorrere la <strong>pista ciclabile</strong> sul lungomare. 
+                Falesie per arrampicata nei dintorni. <strong>Animali domestici benvenuti</strong> con piccolo 
+                supplemento. Tavoli all'aperto per cene sotto le stelle.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-highlight">
+            <div class="highlight-content">
+              <p data-lang="philosophy-text">
+                “La vista, dalla magnificenza della grotta di Tiberio, è di quelle che non si dimenticano. Le acque verdi si confondono col cielo azzurro, il buio della caverna incornicia le spiagge…”
+              </p>
+              <div class="highlight-author">
+                <strong data-lang="philosophy-author">— Corriere.it</strong>
+              </div>
+              <h3 data-lang="philosophy-title">Il paesaggio che l'Imperatore Tiberio amava… ora è il tuo rifugio sul mare</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apartments Section -->
+      <section id="apartments" class="apartments">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="title-accent">I Nostri</span>
+            <span class="title-main">Appartamenti</span>
+          </h2>
+          
+          <div class="apartments-grid">
+            <div class="apartment-card">
+              <div class="apartment-image">
+                <img src="src/assets/bilocale/copertina.jpeg" alt="Appartamento Bilocale" />
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="bilocale-title">Bilocale</h3>
+                <p class="apartment-description" data-lang="bilocale-description">
+                  Accogliente appartamento al piano terra con giardino privato, perfetto per coppie. 
+                  Dispone di una camera da letto matrimoniale, soggiorno con divano letto, cucina 
+                  completamente attrezzata e bagno con doccia.
+                </p>
+                <div class="apartment-features">
+                  <span class="feature-tag" data-lang="guests-2-4">2-4 Ospiti</span>
+                  <span class="feature-tag" data-lang="bedroom-1">1 Camera</span>
+                  <span class="feature-tag" data-lang="private-garden">Giardino Privato</span>
+                  <span class="feature-tag" data-lang="parking">Parcheggio</span>
+                  <span class="feature-tag" data-lang="wifi">WiFi</span>
+                  <span class="feature-tag" data-lang="ac">A/C</span>
+                </div>
+                <a href="bilocale.html" class="apartment-link" data-lang="apartment-cta">Vedi Dettagli</a>
+              </div>
+            </div>
+
+            <div class="apartment-card">
+              <div class="apartment-image">
+                <img src="src/assets/trilocale/copertina.jpeg" alt="Appartamento Trilocale" />
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="trilocale-title">Trilocale</h3>
+                <p class="apartment-description" data-lang="trilocale-description">
+                  Spazioso appartamento al piano terra con due camere da letto e ampio giardino con 
+                  tavolo per cene all'aperto. Ideale per famiglie fino a 4 ospiti con tutti i comfort.
+                </p>
+                <div class="apartment-features">
+                  <span class="feature-tag" data-lang="guests-4">4 Ospiti</span>
+                  <span class="feature-tag" data-lang="bedrooms-2">2 Camere</span>
+                  <span class="feature-tag" data-lang="large-garden">Giardino Ampio</span>
+                  <span class="feature-tag" data-lang="outdoor-table">Tavolo Esterno</span>
+                  <span class="feature-tag" data-lang="washing-machine">Lavatrice</span>
+                  <span class="feature-tag" data-lang="tv">TV</span>
+                </div>
+                <a href="trilocale.html" class="apartment-link" data-lang="apartment-cta">Vedi Dettagli</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews Section -->
+      <section id="reviews" class="reviews">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="reviews-title-accent">Le</span>
+            <span class="title-main" data-lang="reviews-title-main">Recensioni dei Nostri Ospiti</span>
+          </h2>
+          <p class="section-description text-center" data-lang="reviews-description">
+            Cosa dicono le persone che hanno soggiornato nei nostri appartamenti
+          </p>
+          
+          <div class="reviews-container">
+            <div class="reviews-slider">
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text" data-lang="review-1">
+                  "Posizione ideale: mare e centro raggiungibili a piedi. I proprietari sono 
+                  molto gentili e disponibili."
+                </p>
+                <div class="review-author">
+                  <strong>Giank972 - Italia</strong>
+                  <span>Luglio 2025 • Booking.com</span>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text" data-lang="review-2">
+                  "Posizione vicino al mare, pulizia ottimale e tutto il necessario per la colazione. 
+                  Host disponibilissimo e ci ha permesso di tenere l'auto dopo il check‑out."
+                </p>
+                <div class="review-author">
+                  <strong>Martina - Italia</strong>
+                  <span>Giugno 2025 • Booking.com</span>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text" data-lang="review-3">
+                  "Appartamento nuovo, pulito e confortevole a due passi dal lungomare e dal borgo 
+                  storico. Proprietari gentilissimi e comodo parcheggio privato."
+                </p>
+                <div class="review-author">
+                  <strong>Valeria - Italia</strong>
+                  <span>Giugno 2025 • Booking.com</span>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text" data-lang="review-4">
+                  "Buona posizione a 5 minuti a piedi dalla spiaggia. Prezzo vantaggioso 
+                  e graditi spuntini per la colazione."
+                </p>
+                <div class="review-author">
+                  <strong>Alessandro - Italia</strong>
+                  <span>Giugno 2025 • Booking.com</span>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text" data-lang="review-5">
+                  "Appartamento carino, pulito e in ottima posizione: perfetto per una 
+                  vacanza rilassante a Sperlonga."
+                </p>
+                <div class="review-author">
+                  <strong>Ospite - Italia</strong>
+                  <span>2024 • Booking.com</span>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text" data-lang="review-6">
+                  "Siamo stati molto bene. Tutto nelle vicinanze, dalla spiaggia al centro. 
+                  Nell'alloggio c'è tutto il necessario e i proprietari sono molto disponibili."
+                </p>
+                <div class="review-author">
+                  <strong>Simonetta</strong>
+                  <span>Maggio 2025 • Airbnb</span>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text" data-lang="review-7">
+                  "Ci siamo trovati bene nel piccolo appartamento di Antonio; la cucina è 
+                  fornita di tutto e la posizione era perfetta."
+                </p>
+                <div class="review-author">
+                  <strong>Flavia</strong>
+                  <span>Settembre 2024 • Airbnb</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Platforms Section -->
+      <section id="booking-platforms" class="booking-platforms">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="book">Prenota</span>
+            <span class="title-main" data-lang="official-channels">sui Nostri Canali Ufficiali</span>
+          </h2>
+          <p class="section-description text-center" data-lang="booking-intro">
+            Siamo presenti sulle principali piattaforme di prenotazione online
+          </p>
+          
+          <div class="booking-cards">
+            <div class="booking-card">
+              <div class="booking-icon">
+                <i class="fas fa-bed"></i>
+              </div>
+              <h3 data-lang="booking-com-title">Booking.com</h3>
+              <p data-lang="booking-com-desc">Prenota direttamente su una delle piattaforme più affidabili al mondo</p>
+              <a href="https://www.booking.com/hotel/it/scalingi-family-apartments.it.html" target="_blank" class="booking-link" data-lang="booking-com-link">
+                Vai su Booking.com
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="booking-card">
+              <div class="booking-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3 data-lang="airbnb-title">Airbnb</h3>
+              <p data-lang="airbnb-desc">Scopri i nostri appartamenti sulla piattaforma di casa condivisa</p>
+              <div class="airbnb-links">
+                <a href="https://www.airbnb.it/h/trilocalescalingi" target="_blank" class="booking-link small" data-lang="airbnb-trilocale">
+                  Trilocale
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://airbnb.it/h/bilscalingi" target="_blank" class="booking-link small" data-lang="airbnb-bilocale">
+                  Bilocale
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="booking-card featured">
+              <div class="booking-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h3 data-lang="direct-contact-title">Contatto Diretto</h3>
+              <p data-lang="direct-contact-desc">Per disponibilità, offerte speciali e condizioni personalizzate</p>
+              <a href="#contact" class="booking-link featured-link" data-lang="direct-contact-link">
+                Contattaci Ora
+                <i class="fas fa-arrow-down"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="experience">
+        <div class="container">
+          <div class="experience-content">
+            <div class="experience-text">
+              <h2 class="section-title">
+                <span class="title-accent" data-lang="experience-title-accent">L'</span>
+                <span class="title-main" data-lang="experience-title-main">Esperienza Sperlonga</span>
+              </h2>
+              <p class="section-description" data-lang="experience-description">
+                Immergiti nella bellezza senza tempo di una delle città costiere più incantevoli d'Italia. 
+                Dalle spiagge incontaminate alla storia antica, ogni momento è un ricordo che aspetta di essere creato.
+              </p>
+            </div>
+            
+            <div class="experience-grid">
+              <div class="experience-item" data-experience="beaches">
+                <div class="experience-icon">
+                  <i class="fas fa-umbrella-beach"></i>
+                </div>
+                <h3 data-lang="beaches-title">Spiagge Incontaminate</h3>
+                <p data-lang="beaches-desc">Sabbie dorate e acque cristalline a pochi passi dalla tua porta</p>
+                <div class="experience-cta">
+                  <span data-lang="discover-more">Scopri di più</span>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item" data-experience="historic">
+                <div class="experience-icon">
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <h3 data-lang="historic-title">Centro Storico</h3>
+                <p data-lang="historic-desc">Passeggia per strade medievali ricche di fascino e carattere</p>
+                <div class="experience-cta">
+                  <span data-lang="discover-more">Scopri di più</span>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item" data-experience="cuisine">
+                <div class="experience-icon">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <h3 data-lang="cuisine-title">Cucina Locale</h3>
+                <p data-lang="cuisine-desc">Assapora autentici sapori italiani nei ristoranti sul lungomare</p>
+                <div class="experience-cta">
+                  <span data-lang="discover-more">Scopri di più</span>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item" data-experience="nature">
+                <div class="experience-icon">
+                  <i class="fas fa-hiking"></i>
+                </div>
+                <h3 data-lang="nature-title">Sentieri Naturali</h3>
+                <p data-lang="nature-desc">Esplora sentieri costieri panoramici e calette nascoste</p>
+                <div class="experience-cta">
+                  <span data-lang="discover-more">Scopri di più</span>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item" data-experience="archaeology">
+                <div class="experience-icon">
+                  <i class="fas fa-history"></i>
+                </div>
+                <h3 data-lang="archaeology-title">Storia e Archeologia</h3>
+                <p data-lang="archaeology-desc">Scopri i tesori romani e le leggende di Ulisse</p>
+                <div class="experience-cta">
+                  <span data-lang="discover-more">Scopri di più</span>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+
+              <div class="experience-item" data-experience="watersports">
+                <div class="experience-icon">
+                  <i class="fas fa-swimmer"></i>
+                </div>
+                <h3 data-lang="watersports-title">Mare e Sport Acquatici</h3>
+                <p data-lang="watersports-desc">Immersioni, kayak, vela e windsurf nelle acque cristalline</p>
+                <div class="experience-cta">
+                  <span data-lang="discover-more">Scopri di più</span>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Modals -->
+      <div id="experience-modal" class="experience-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+          <button class="modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+          
+          <!-- Beaches Modal -->
+          <div class="modal-detail" data-modal="beaches">
+            <div class="modal-icon">
+              <i class="fas fa-umbrella-beach"></i>
+            </div>
+            <h2 data-lang="beaches-modal-title">Spiagge Incontaminate</h2>
+            <p class="modal-description" data-lang="beaches-modal-desc">
+              La costa di Sperlonga è famosa per sabbia chiara e acqua limpidissima. Spiagge come l'Angolo e le Bambole, raggiungibili solo a piedi o in barca, permettono di immergersi in una natura incontaminata.
+            </p>
+            <div class="modal-content-text">
+              <p data-lang="beaches-modal-text">
+                Lungo la Riviera di Ulisse le acque cristalline e le baie nascoste sono ideali per nuotare, fare snorkeling o partecipare a tour in barca alla scoperta di grotte azzurre e angoli segreti.
+              </p>
+              <div class="modal-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-water"></i>
+                  <span data-lang="beaches-highlight-1">Acque cristalline per snorkeling</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-ship"></i>
+                  <span data-lang="beaches-highlight-2">Tour in barca alle grotte azzurre</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-eye"></i>
+                  <span data-lang="beaches-highlight-3">Spiagge nascoste come l'Angolo e le Bambole</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Historic Center Modal -->
+          <div class="modal-detail" data-modal="historic">
+            <div class="modal-icon">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <h2 data-lang="historic-modal-title">Centro Storico</h2>
+            <p class="modal-description" data-lang="historic-modal-desc">
+              Il borgo, riconosciuto tra i "Borghi più belli d'Italia", è un intricato dedalo di vicoli bianchissimi, archi e scalinate panoramiche che si affacciano sul mare.
+            </p>
+            <div class="modal-content-text">
+              <p data-lang="historic-modal-text">
+                Passeggiando nel centro storico si respira l'atmosfera mediterranea: case tinte di bianco, fiori alle finestre e scorci spettacolari sulle coste di levante e ponente. È il luogo ideale per una passeggiata serale tra botteghe, ristoranti e caffè.
+              </p>
+              <div class="modal-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-award"></i>
+                  <span data-lang="historic-highlight-1">Riconosciuto tra i "Borghi più belli d'Italia"</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-camera"></i>
+                  <span data-lang="historic-highlight-2">Scorci panoramici su levante e ponente</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-moon"></i>
+                  <span data-lang="historic-highlight-3">Perfetto per passeggiate serali</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Cuisine Modal -->
+          <div class="modal-detail" data-modal="cuisine">
+            <div class="modal-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h2 data-lang="cuisine-modal-title">Cucina Locale</h2>
+            <p class="modal-description" data-lang="cuisine-modal-desc">
+              La gastronomia di Sperlonga riflette la tradizione marinara della Riviera di Ulisse con piatti autentici preparati con ingredienti freschi del territorio.
+            </p>
+            <div class="modal-content-text">
+              <div class="cuisine-specialties">
+                <div class="specialty-item">
+                  <h4 data-lang="cuisine-specialty-1-title"><i class="fas fa-fish"></i> Zuppa di pesce alla sperlongana</h4>
+                  <p data-lang="cuisine-specialty-1-desc">Preparata con pesci di scoglio, molluschi e crostacei</p>
+                </div>
+                <div class="specialty-item">
+                  <h4 data-lang="cuisine-specialty-2-title"><i class="fas fa-seedling"></i> Bombolotti al ragù di seppie</h4>
+                  <p data-lang="cuisine-specialty-2-desc">Con un sugo delicato ma saporito</p>
+                </div>
+                <div class="specialty-item">
+                  <h4 data-lang="cuisine-specialty-3-title"><i class="fas fa-utensils"></i> Spaghetti alle cicale di mare</h4>
+                  <p data-lang="cuisine-specialty-3-desc">Con canocchie saltate in olio e vino</p>
+                </div>
+                <div class="specialty-item">
+                  <h4 data-lang="cuisine-specialty-4-title"><i class="fas fa-pizza-slice"></i> Tiella di Gaeta</h4>
+                  <p data-lang="cuisine-specialty-4-desc">Torta salata a due strati con ripieni di polpo o verdure</p>
+                </div>
+              </div>
+              <p data-lang="cuisine-modal-text">A questi si aggiungono le celebri olive e alici di Gaeta, spesso servite come antipasto.</p>
+            </div>
+          </div>
+          
+          <!-- Nature Modal -->
+          <div class="modal-detail" data-modal="nature">
+            <div class="modal-icon">
+              <i class="fas fa-hiking"></i>
+            </div>
+            <h2 data-lang="nature-modal-title">Sentieri Naturali e Parco Regionale</h2>
+            <p class="modal-description" data-lang="nature-modal-desc">
+              Il Parco regionale Riviera di Ulisse, che abbraccia il tratto costiero tra Gaeta e Sperlonga, offre una biodiversità straordinaria e sentieri panoramici.
+            </p>
+            <div class="modal-content-text">
+              <p data-lang="nature-modal-text">
+                Uno dei percorsi più suggestivi conduce alla "Montagna Spaccata", fenditura nella roccia con un santuario medievale e viste mozzafiato. Da Sperlonga partono escursioni guidate a piedi o in bicicletta lungo il <em>Sentiero di Ulisse</em>, che collega il centro storico al Museo Archeologico, attraversando uliveti e macchia costiera.
+              </p>
+              <div class="modal-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-mountain"></i>
+                  <span data-lang="nature-highlight-1">Sentiero alla "Montagna Spaccata"</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-route"></i>
+                  <span data-lang="nature-highlight-2">Sentiero di Ulisse tra centro e museo</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-biking"></i>
+                  <span data-lang="nature-highlight-3">Escursioni a piedi o in bicicletta</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-anchor"></i>
+                  <span data-lang="nature-highlight-4">Tour in barca alle grotte marine</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Archaeology Modal -->
+          <div class="modal-detail" data-modal="archaeology">
+            <div class="modal-icon">
+              <i class="fas fa-history"></i>
+            </div>
+            <h2 data-lang="archaeology-modal-title">Storia e Archeologia</h2>
+            <p class="modal-description" data-lang="archaeology-modal-desc">
+              Oltre alle bellezze naturali, Sperlonga custodisce la Villa di Tiberio, residenza imperiale costruita accanto a una grotta che fu trasformata in ninfeo.
+            </p>
+            <div class="modal-content-text">
+              <p data-lang="archaeology-modal-text">
+                Gli scavi hanno restituito gruppi scultorei oggi esposti nel Museo Archeologico Nazionale. Visitare la villa e la grotta offre un viaggio nella storia romana e nelle leggende legate a Ulisse.
+              </p>
+              <div class="modal-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-crown"></i>
+                  <span data-lang="archaeology-highlight-1">Villa di Tiberio - residenza imperiale</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-university"></i>
+                  <span data-lang="archaeology-highlight-2">Museo Archeologico Nazionale</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-scroll"></i>
+                  <span data-lang="archaeology-highlight-3">Leggende di Ulisse</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-gem"></i>
+                  <span data-lang="archaeology-highlight-4">Gruppi scultorei romani</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Water Sports Modal -->
+          <div class="modal-detail" data-modal="watersports">
+            <div class="modal-icon">
+              <i class="fas fa-swimmer"></i>
+            </div>
+            <h2 data-lang="watersports-modal-title">Mare e Sport Acquatici</h2>
+            <p class="modal-description" data-lang="watersports-modal-desc">
+              Le acque trasparenti di Sperlonga e i suoi dintorni regalano avventure uniche agli amanti del mare e degli sport acquatici.
+            </p>
+            <div class="modal-content-text">
+              <p data-lang="watersports-modal-text">
+                Esplora la costa, visita grotte affascinanti come la Grotta di Tiberio con mosaici marini e la Grotta delle Bambole, e fai snorkeling nelle acque blu della Grotta Azzurra. Al porto, noleggia gommoni o barche per scoprire baie nascoste o affidati agli operatori locali per escursioni personalizzate lungo la costa.
+              </p>
+              <div class="modal-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-ship"></i>
+                  <span data-lang="watersports-highlight-1">Tour in barca e immersioni nelle grotte marine</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-anchor"></i>
+                  <span data-lang="watersports-highlight-2">Noleggi e charter dal porto di Sperlonga</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-water"></i>
+                  <span data-lang="watersports-highlight-3">Sci nautico, canoa, vela e sailing school</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-leaf"></i>
+                  <span data-lang="watersports-highlight-4">Oasi Blu Villa di Tiberio e Parco Regionale</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="title-accent" data-lang="contact-title-accent">Mettiti In</span>
+            <span class="title-main" data-lang="contact-title-main">Contatto</span>
+          </h2>
+          <p class="section-description left-align" data-lang="contact-description">
+            Pronto a vivere la magia di Sperlonga? Contattaci per prenotare la tua fuga perfetta.
+          </p>
+          
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div>
+                    <strong data-lang="contact-address-label">Indirizzo</strong>
+                    <span data-lang="contact-address">Via Lepanto, Sperlonga (LT), Italia  <br> Condominio "IRIS"</span>
+                  </div>
+                </div>
+                <!-- <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <strong data-lang="contact-email-label">Email</strong>
+                    <span>info@scalingiapartments.com</span>
+                  </div>
+                </div> -->
+                
+                <!-- <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <strong data-lang="contact-email-label">Email</strong>
+                    <span>info@scalingiapartments.it</span>
+                  </div>
+                </div> -->
+              </div>
+              
+              <div class="booking-cta">
+                <a href="#booking" class="cta-button primary" data-lang="contact-cta">Prenota Ora</a>
+                <!-- <a href="https://wa.me/393331234567" class="cta-button secondary">
+                  <i class="fab fa-whatsapp"></i> WhatsApp
+                </a> -->
+              </div>
+            </div>
+            
+            <div class="contact-map">
+              <img src="src/assets/myhouse_horizontal.png" alt="Sperlonga Map" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">Scalingi</div>
+            <p class="footer-tagline" data-lang="footer-tagline">
+              Ospitalità autentica a due passi dal mare di Sperlonga
+            </p>
+            <div class="footer-social">
+              <!-- <a href="https://wa.me/393331234567" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a> -->
+              <a href="https://www.booking.com/hotel/it/scalingi-family-apartments.it.html" target="_blank" aria-label="Booking.com">
+                <i class="fas fa-bed"></i>
+              </a>
+              <a href="https://www.airbnb.it/h/trilocalescalingi" target="_blank" aria-label="Airbnb">
+                <i class="fab fa-airbnb"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-appartamenti">Appartamenti</h4>
+            <ul class="footer-links">
+              <li><a href="bilocale.html" data-lang="footer-bilocale">Bilocale</a></li>
+              <li><a href="trilocale.html" data-lang="footer-trilocale">Trilocale</a></li>
+              <li><a href="#apartments" data-lang="footer-tutti">Tutti gli Appartamenti</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-informazioni">Informazioni</h4>
+            <ul class="footer-links">
+              <li><a href="#about" data-lang="footer-chi-siamo">Chi Siamo</a></li>
+              <li><a href="#experience" data-lang="footer-esperienza">Esperienza Sperlonga</a></li>
+              <li><a href="#reviews" data-lang="footer-recensioni">Recensioni</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-contatti">Contatti</h4>
+            <div class="footer-contact">
+              <p data-lang="footer-indirizzo">
+                <i class="fas fa-map-marker-alt"></i>
+                Via Lepanto, Sperlonga (LT)
+              </p>
+              <!-- <p data-lang="footer-email">
+                <i class="fas fa-envelope"></i>
+                info@scalingiapartments.com
+              </p> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <p data-lang="footer-copyright">
+              © 2025 Scalingi Apartments. Tutti i diritti riservati.
+            </p>
+          </div>
+          <div class="footer-legal">
+            <span data-lang="footer-privacy">Privacy Policy</span>
+            <span data-lang="footer-terms">Termini di Servizio</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="script.js?v=20250828" defer></script>
+  <script src="app-config.js"></script>
+  <script src="booking.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trilocale - Scalingi Apartments Sperlonga</title>
+    <meta name="description" content="Trilocale spazioso a Sperlonga con due camere da letto, perfetto per famiglie. Appartamento completamente attrezzato con giardino e parcheggio.">
+    <meta name="keywords" content="trilocale sperlonga, appartamento famiglia, due camere, casa vacanze, affitto vacanze">
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">Scalingi</div>
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-links">
+            <li><a href="index.html#home" data-lang="nav-home">Home</a></li>
+            <li><a href="index.html#about" data-lang="nav-about">Chi Siamo</a></li>
+            <li><a href="index.html#apartments" data-lang="nav-apartments">Appartamenti</a></li>
+            <li><a href="index.html#reviews" data-lang="nav-reviews">Recensioni</a></li>
+            <li><a href="index.html#experience" data-lang="nav-experience">Esperienza</a></li>
+            <li><a href="index.html#contact" data-lang="nav-contact">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="language-toggle">
+          <button class="flag-button active" data-lang="it" title="Italiano">
+            <span class="flag-emoji">🇮🇹</span>
+          </button>
+          <button class="flag-button" data-lang="en" title="English">
+            <span class="flag-emoji">🇬🇧</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-background">
+          <img src="src/assets/trilocale/copertina.jpeg" alt="Trilocale Sperlonga - Vista Esterno" />
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="hero-subtitle" data-lang="trilocale-hero-subtitle">Trilocale</span>
+              <span class="hero-main" data-lang="trilocale-hero-title">Famiglia</span>
+              <span class="hero-description" data-lang="trilocale-hero-description">Due camere da letto per un soggiorno perfetto</span>
+            </h1>
+          </div>
+          <div class="hero-cta">
+            <a href="#gallery" class="cta-button" data-lang="trilocale-hero-cta">Scopri gli Spazi</a>
+            <a href="#booking" class="cta-button secondary" data-lang="trilocale-hero-book">Prenota Ora</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-dot"></div>
+        </div>
+      </section>
+
+      <!-- Apartment Overview Section -->
+      <section id="overview" class="about">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="trilocale-overview-title-accent">Il Tuo</span>
+            <span class="title-main" data-lang="trilocale-overview-title-main">Trilocale</span>
+          </h2>
+          <p class="section-description text-center" data-lang="trilocale-overview-description">
+            Un appartamento spazioso e confortevole, ideale per famiglie fino a 4 ospiti che desiderano 
+            vivere Sperlonga con tutti i comfort di casa
+          </p>
+
+          <div class="about-cards">
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-bed"></i>
+              </div>
+              <h3 data-lang="trilocale-rooms-title">Due Camere Private</h3>
+              <p data-lang="trilocale-rooms-desc">
+                <strong>Camera matrimoniale</strong> spaziosa e <strong>camera con due letti singoli</strong>, 
+                ideale per bambini o ospiti. Entrambe le camere sono climatizzate e dotate di armadi 
+                capienti per un soggiorno organizzato.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <h3 data-lang="trilocale-living-title">Spazi Condivisi Ampi</h3>
+              <p data-lang="trilocale-living-desc">
+                <strong>Soggiorno luminoso</strong> con zona pranzo, <strong>cucina completamente attrezzata</strong> 
+                per cucinare per tutta la famiglia, e bagno completo con doccia. Perfetto per momenti 
+                di convivialità e relax.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-tree"></i>
+              </div>
+              <h3 data-lang="trilocale-garden-title">Giardino Privato</h3>
+              <p data-lang="trilocale-garden-desc">
+                <strong>Ampio giardino recintato</strong> con tavolo per cene all'aperto sotto le stelle. 
+                Spazio sicuro per bambini e perfetto per godersi la brezza marina in totale privacy 
+                e relax.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3 data-lang="trilocale-parking-title">Servizi Completi</h3>
+              <p data-lang="trilocale-parking-desc">
+                <strong>Posto auto privato gratuito</strong>, lavatrice, WiFi veloce, TV, aria condizionata. 
+                Deposito biciclette nel giardino. <strong>Animali domestici benvenuti</strong> con piccolo 
+                supplemento per un soggiorno family-friendly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section active">
+        <div class="container">
+          <h2 data-i18n="trilocale.description">Si trova in un villino con giardino privato a 200 m dal mare. Offre un soggiorno luminoso con cucina attrezzata, tavolo esterno per cene, parcheggio gratuito, aria condizionata, lavatrice, TV e Wi‑Fi veloce.</h2>
+          <p data-i18n="trilocale.more">
+            Ideale per famiglie o gruppi di amici che cercano tranquillità vicino al mare. Lo spazio è adatto al remote working grazie a un’area dedicata. Troverai bar, ristoranti e supermercati a pochi minuti a piedi.
+          </p>
+          <h3 data-i18n="trilocale.reviewsTitle">Cosa dicono gli ospiti</h3>
+          <ul class="services-list">
+            <li data-i18n="trilocale.review1">La posizione è ideale per raggiungere spiaggia e centro, e l'appartamento è ben attrezzato e curato.</li>
+            <li data-i18n="trilocale.review2">Famiglia con bambini: casa pulita, a pochi passi dal mare e da tutti i servizi, tranquillissima.</li>
+          </ul>
+          <a href="index.html" class="secondary-button" data-i18n="trilocale.backBtn">Torna alla home</a>
+        </div>
+      </section>
+    </main>
+    <script src="script.js" defer></script>
+    <!-- Footer con contatti e icone -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-item">
+          <i class="fa-brands fa-whatsapp"></i> +39 333 1234567
+        </div>
+        <div class="footer-item">
+          <i class="fa-solid fa-envelope"></i> info@scalingiapartments.it
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

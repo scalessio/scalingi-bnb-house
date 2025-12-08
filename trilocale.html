@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trilocale - Scalingi Apartments Sperlonga</title>
+    <meta name="description" content="Trilocale spazioso a Sperlonga con due camere da letto, perfetto per famiglie. Appartamento completamente attrezzato con giardino e parcheggio.">
+    <meta name="keywords" content="trilocale sperlonga, appartamento famiglia, due camere, casa vacanze, affitto vacanze">
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome per icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css?v=20250828" />
+  <link rel="stylesheet" href="booking.css" />
+  <!-- EmailJS for form submission -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">Scalingi</div>
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-links">
+            <li><a href="index.html#home" data-lang="nav-home">Home</a></li>
+            <li><a href="index.html#about" data-lang="nav-about">Chi Siamo</a></li>
+            <li><a href="index.html#apartments" data-lang="nav-apartments">Appartamenti</a></li>
+            <li><a href="index.html#reviews" data-lang="nav-reviews">Recensioni</a></li>
+            <li><a href="index.html#experience" data-lang="nav-experience">Esperienza</a></li>
+            <li><a href="index.html#contact" data-lang="nav-contact">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="language-toggle">
+          <button class="flag-button active" data-lang="it" title="Italiano">
+            <span class="flag-emoji">🇮🇹</span>
+          </button>
+          <button class="flag-button" data-lang="en" title="English">
+            <span class="flag-emoji">🇬🇧</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-background">
+          <img src="src/assets/trilocale/copertina.jpeg" alt="Trilocale Sperlonga - Vista Esterno" />
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="hero-subtitle" data-lang="trilocale-hero-subtitle">Il Trilocale</span>
+              <span class="hero-main" data-lang="trilocale-hero-title">Family Home</span>
+              <span class="hero-description" data-lang="trilocale-hero-description">Due camere da letto per un soggiorno perfetto</span>
+            </h1>
+          </div>
+          <div class="hero-cta">
+            <a href="#gallery" class="cta-button" data-lang="trilocale-hero-cta">Scopri gli Spazi</a>
+            <a href="#booking" class="cta-button secondary" data-lang="trilocale-hero-book">Prenota Ora</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-dot"></div>
+        </div>
+      </section>
+
+      <!-- Apartment Overview Section -->
+      <section id="overview" class="about">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="trilocale-overview-title-accent">Il Tuo</span>
+            <span class="title-main" data-lang="trilocale-overview-title-main">Trilocale</span>
+          </h2>
+          <p class="section-description text-center" data-lang="trilocale-overview-description">
+            Un appartamento spazioso e confortevole, ideale per famiglie fino a 4 ospiti che desiderano 
+            vivere Sperlonga con tutti i comfort di casa
+          </p>
+
+          <div class="about-cards">
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-bed"></i>
+              </div>
+              <h3 data-lang="trilocale-rooms-title">Due Camere Private</h3>
+              <p data-lang="trilocale-rooms-desc">
+                <strong>Camera matrimoniale</strong> spaziosa e <strong>camera con due letti singoli</strong>, 
+                ideale per bambini o ospiti. Entrambe le camere sono climatizzate e dotate di armadi 
+                capienti per un soggiorno organizzato.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <h3 data-lang="trilocale-living-title">Spazi Condivisi Ampi</h3>
+              <p data-lang="trilocale-living-desc">
+                <strong>Soggiorno luminoso</strong> con zona pranzo, <strong>cucina completamente attrezzata</strong> 
+                per cucinare per tutta la famiglia, e bagno completo con doccia. Perfetto per momenti 
+                di convivialità e relax.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-tree"></i>
+              </div>
+              <h3 data-lang="trilocale-garden-title">Giardino Privato</h3>
+              <p data-lang="trilocale-garden-desc">
+                <strong>Ampio giardino recintato</strong> con tavolo per cene all'aperto sotto le stelle. 
+                Spazio sicuro per bambini e perfetto per godersi la brezza marina in totale privacy 
+                e relax.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <div class="card-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3 data-lang="trilocale-parking-title">Servizi Completi</h3>
+              <p data-lang="trilocale-parking-desc">
+                <strong>Posto auto privato gratuito</strong>, lavatrice, WiFi veloce, TV, aria condizionata. 
+                Deposito biciclette nel giardino. <strong>Animali domestici benvenuti</strong> con piccolo 
+                supplemento per un soggiorno family-friendly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photo Gallery -->
+      <section id="gallery" class="apartments">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="title-accent" data-lang="gallery-title-accent">Galleria</span>
+            <span class="title-main" data-lang="gallery-title-main">Fotografica</span>
+          </h2>
+          <p class="section-description text-center" data-lang="trilocale-gallery-description">
+            Esplora ogni ambiente del trilocale: dalle camere spaziose al giardino privato, 
+            scopri tutti gli spazi che renderanno perfetto il tuo soggiorno in famiglia
+          </p>
+          
+          <div class="apartments-grid">
+            <div class="apartment-card" data-gallery-item="master-bedroom">
+              <div class="apartment-image">
+                <img src="src/assets/trilocale/Bedroom.jpeg" alt="Camera matrimoniale trilocale" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="trilocale-gallery-master-title">Camera Matrimoniale</h3>
+                <p class="apartment-description" data-lang="trilocale-gallery-master-desc">
+                  Spaziosa camera matrimoniale con letto comodo, armadio capiente e tutti i comfort 
+                  per il riposo dei genitori, con vista sul giardino.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="twin-bedroom">
+              <div class="apartment-image">
+                <img src="src/assets/trilocale/Bedroom2.jpg" alt="Camera con due letti singoli" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="trilocale-gallery-twin-title">Camera Due Letti</h3>
+                <p class="apartment-description" data-lang="trilocale-gallery-twin-desc">
+                  Camera luminosa con due letti singoli, perfetta per bambini o ospiti aggiuntivi. 
+                  Spazio funzionale e accogliente per tutti.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="living-room">
+              <div class="apartment-image">
+                <img src="src/assets/trilocale/Sala_cucina2.jpg" alt="Soggiorno trilocale" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="trilocale-gallery-living-title">Soggiorno Ampio</h3>
+                <p class="apartment-description" data-lang="trilocale-gallery-living-desc">
+                  Zona living spaziosa con divano comodo, tavolo da pranzo e accesso diretto 
+                  al giardino privato per momenti di convivialità.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="kitchen-dining">
+              <div class="apartment-image">
+                <img src="src/assets/trilocale/Cucina.jpeg" alt="Cucina attrezzata trilocale" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="trilocale-gallery-kitchen-title">Cucina Completa</h3>
+                <p class="apartment-description" data-lang="trilocale-gallery-kitchen-desc">
+                  Cucina completamente attrezzata con tutti gli elettrodomestici e utensili necessari 
+                  per preparare pasti per tutta la famiglia.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="bathroom">
+              <div class="apartment-image">
+                <img src="src/assets/trilocale/Bagno.JPG" alt="Bagno completo trilocale" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="trilocale-gallery-bathroom-title">Bagno Completo</h3>
+                <p class="apartment-description" data-lang="trilocale-gallery-bathroom-desc">
+                  Bagno moderno con doccia, lavabo con specchio, WC e bidet. Asciugacapelli e set cortesia a disposizione.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="private-garden">
+              <div class="apartment-image">
+                <img src="src/assets/trilocale/Giardino_2.JPG" alt="Giardino privato con tavolo" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="trilocale-gallery-garden-title">Giardino Privato</h3>
+                <p class="apartment-description" data-lang="trilocale-gallery-garden-desc">
+                  Ampio giardino recintato con tavolo per cene all'aperto e spazio relax. 
+                  Perfetto per bambini e momenti di tranquillità.
+                </p>
+              </div>
+            </div>
+
+            <div class="apartment-card" data-gallery-item="exterior-view">
+              <div class="apartment-image">
+                <img src="src/assets/trilocale/Entrata.jpeg" alt="Vista esterna trilocale" loading="lazy">
+                <div class="gallery-overlay">
+                  <i class="fas fa-expand-alt"></i>
+                  <span>Visualizza dettagli</span>
+                </div>
+              </div>
+              <div class="apartment-info">
+                <h3 class="apartment-title" data-lang="trilocale-gallery-exterior-title">Vista Esterna</h3>
+                <p class="apartment-description" data-lang="trilocale-gallery-exterior-desc">
+                  Vista dell'appartamento dall'esterno con accesso indipendente, parcheggio 
+                  privato e spazio verde circostante.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Booking Platforms Section -->
+      <section id="booking" class="booking-platforms">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="book-trilocale">Prenota il</span>
+            <span class="title-main" data-lang="book-trilocale-title">Trilocale</span>
+          </h2>
+          <p class="section-description text-center" data-lang="booking-trilocale-intro">
+            Scegli la piattaforma che preferisci per prenotare il tuo soggiorno in famiglia nel trilocale
+          </p>
+          
+          <div class="booking-cards">
+            <div class="booking-card">
+              <div class="booking-icon">
+                <i class="fas fa-bed"></i>
+              </div>
+              <h3 data-lang="booking-com-title">Booking.com</h3>
+              <p data-lang="booking-com-trilocale-desc">Prenota il trilocale su una delle piattaforme più affidabili al mondo</p>
+              <a href="https://www.booking.com/hotel/it/scalingi-family-apartments.it.html" target="_blank" class="booking-link" data-lang="booking-com-link">
+                Vai su Booking.com
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="booking-card">
+              <div class="booking-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3 data-lang="airbnb-title">Airbnb</h3>
+              <p data-lang="airbnb-trilocale-desc">Scopri il trilocale sulla piattaforma di casa condivisa</p>
+              <a href="https://www.airbnb.it/h/trilocalescalingi" target="_blank" class="booking-link" data-lang="airbnb-trilocale-link">
+                Prenota su Airbnb
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="booking-card featured">
+              <div class="booking-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h3 data-lang="direct-contact-title">Contatto Diretto</h3>
+              <p data-lang="direct-contact-trilocale-desc">Contattaci per disponibilità, sconti famiglia e condizioni speciali</p>
+              <a href="index.html#contact" class="booking-link featured-link" data-lang="direct-contact-link">
+                Contattaci Ora
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features & Services -->
+      <section id="features" class="reviews">
+        <div class="container">
+          <h2 class="section-title text-center">
+            <span class="title-accent" data-lang="trilocale-features-title-accent">Caratteristiche</span>
+            <span class="title-main" data-lang="trilocale-features-title-main">e Servizi</span>
+          </h2>
+          <p class="section-description text-center" data-lang="trilocale-features-description">
+            Tutto ciò di cui una famiglia ha bisogno per una vacanza perfetta a Sperlonga
+          </p>
+          
+          <div class="reviews-container">
+            <div class="reviews-slider">
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-bed"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="trilocale-feature-rooms-title">Camere da Letto</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="trilocale-room-1">✓ Camera matrimoniale spaziosa</li>
+                  <li data-lang="trilocale-room-2">✓ Camera con due letti singoli</li>
+                  <li data-lang="trilocale-room-3">✓ Armadi capienti in entrambe</li>
+                  <li data-lang="trilocale-room-4">✓ Aria condizionata in ogni camera</li>
+                  <li data-lang="trilocale-room-5">✓ Biancheria e cuscini inclusi</li>
+                </ul>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-home"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="trilocale-feature-living-title">Spazi Condivisi</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="trilocale-living-1">✓ Soggiorno ampio e luminoso</li>
+                  <li data-lang="trilocale-living-2">✓ Tavolo da pranzo per 4 persone</li>
+                  <li data-lang="trilocale-living-3">✓ Divano comodo per il relax</li>
+                  <li data-lang="trilocale-living-4">✓ TV Smart con Netflix</li>
+                  <li data-lang="trilocale-living-5">✓ Bagno completo con doccia</li>
+                </ul>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="trilocale-feature-kitchen-title">Cucina Attrezzata</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="trilocale-kitchen-1">✓ Frigorifero grande con freezer</li>
+                  <li data-lang="trilocale-kitchen-2">✓ Piano cottura e forno</li>
+                  <li data-lang="trilocale-kitchen-3">✓ Microonde e tostapane</li>
+                  <li data-lang="trilocale-kitchen-4">✓ Stoviglie per 4+ persone</li>
+                  <li data-lang="trilocale-kitchen-5">✓ Macchina del caffè e bollitore</li>
+                </ul>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-tree"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="trilocale-feature-outdoor-title">Spazio Esterno</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="trilocale-outdoor-1">✓ Giardino privato recintato</li>
+                  <li data-lang="trilocale-outdoor-2">✓ Tavolo per cene all'aperto</li>
+                  <li data-lang="trilocale-outdoor-3">✓ Parcheggio auto privato</li>
+                  <li data-lang="trilocale-outdoor-4">✓ Deposito biciclette</li>
+                  <li data-lang="trilocale-outdoor-5">✓ Animali domestici benvenuti</li>
+                </ul>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="feature-safety-title">Sicurezza</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="safety-1">✓ Rilevatore di monossido di carbonio</li>
+                  <li data-lang="safety-2">✓ Rilevatore di fumo</li>
+                  <li data-lang="safety-3">✓ Area esterna videosorvegliata</li>
+                  <li data-lang="safety-4">✓ Estintore</li>
+                </ul>
+              </div>
+
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="fas fa-bus"></i>
+                </div>
+                <h3 class="apartment-title" data-lang="feature-transport-title">Trasporti & Collegamenti</h3>
+                <ul style="list-style: none; padding: 0; color: var(--color-text-light); line-height: 1.8;">
+                  <li data-lang="transport-1">✓ Fermata autobus di fronte casa (50 metri)</li>
+                  <li data-lang="transport-2">✓ Stazione ferroviaria Fondi–Sperlonga a 11 km</li>
+                  <li data-lang="transport-3">✓ Aeroporti di Napoli e Roma a 110 km</li>
+                  <li data-lang="transport-4">✓ Servizio navetta (pagamento extra) su richiesta</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Location Section -->
+      <section id="location" class="experience">
+        <div class="container">
+          <div class="experience-content">
+            <div class="experience-text">
+              <h2 class="section-title">
+                <span class="title-accent" data-lang="location-title-accent">Posizione</span>
+                <span class="title-main" data-lang="location-title-main">Strategica</span>
+              </h2>
+              <p class="section-description" data-lang="location-description">
+                Il bilocale si trova nel cuore di Sperlonga, all'inizio del lungomare e della pista ciclabile, in una posizione privilegiata che ti permette 
+                di raggiungere facilmente tutte le attrazioni principali a piedi.
+              </p>
+            </div>
+            
+            <div class="experience-grid">
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-umbrella-beach"></i>
+                </div>
+                <h3 data-lang="location-beach-title">Spiaggia</h3>
+                <p data-lang="location-beach-desc">150 metri - 3 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-beach-detail">Sabbia dorata e mare cristallino</span>
+                  <i class="fas fa-water"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <h3 data-lang="location-center-title">Centro Storico</h3>
+                <p data-lang="location-center-desc">1.4 Km - 20 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-center-detail">Borgo medievale e ristoranti</span>
+                  <i class="fas fa-utensils"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3 data-lang="location-shop-title">Supermercato</h3>
+                <p data-lang="location-shop-desc">500 metri - 7 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-shop-detail">Tutti i prodotti essenziali</span>
+                  <i class="fas fa-shopping-basket"></i>
+                </div>
+              </div>
+              
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-history"></i>
+                </div>
+                <h3 data-lang="location-museum-title">Villa di Tiberio</h3>
+                <p data-lang="location-museum-desc">2.8 km - 40 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-museum-detail">Sito archeologico e museo</span>
+                  <i class="fas fa-monument"></i>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-anchor"></i>
+                </div>
+                <h3 data-lang="location-port-title">Porto</h3>
+                <p data-lang="location-port-desc">1.5 km - 15 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-port-detail">Torre Truglia, Passeggiate sul molo e noleggio barche</span>
+                  <i class="fas fa-ship"></i>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fas fa-briefcase-medical"></i>
+                </div>
+                <h3 data-lang="location-health-title">Farmacie e Ambulatorio</h3>
+                <p data-lang="location-health-desc">300 metri - 5 minuti a piedi</p>
+                <div class="experience-cta">
+                  <span data-lang="location-health-detail">Farmacie e presidio ambulatorio vicini</span>
+                  <i class="fas fa-notes-medical"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="contact-content">
+            <div class="contact-info">
+              <h2 class="section-title">
+                <span class="title-accent" data-lang="contact-trilocale-accent">Contattaci</span>
+                <span class="title-main" data-lang="contact-trilocale-main">Direttamente</span>
+              </h2>
+              <p class="section-description left-align" data-lang="contact-trilocale-description">
+                Pronto per una vacanza in famiglia indimenticabile? Contattaci per prenotare il trilocale.
+              </p>
+              
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div>
+                    <strong data-lang="contact-address-label">Indirizzo</strong>
+                    <span data-lang="contact-address">Via Lepanto, Sperlonga (LT), Italia<br>Condominio "IRIS"</span>
+                  </div>
+                </div>
+                
+                <!-- <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <strong data-lang="contact-email-label">Email</strong>
+                    <span>info@scalingiapartments.com</span>
+                  </div>
+                </div> -->
+              </div>
+              
+              <div class="booking-cta">
+                <a href="#booking" class="cta-button primary" data-lang="contact-cta">Prenota Ora</a>
+                <!-- <a href="https://wa.me/393331234567" class="cta-button secondary">
+                  <i class="fab fa-whatsapp"></i> WhatsApp
+                </a> -->
+              </div>
+            </div>
+            
+            <div class="contact-map">
+              <img src="src/assets/myhouse_horizontal.png" alt="Sperlonga Map" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Modal -->
+      <div id="gallery-modal" class="gallery-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+          <button class="modal-close">
+            <i class="fas fa-times"></i>
+          </button>
+          
+          <div class="modal-image-container">
+            <img id="modal-image" src="" alt="" />
+            <div class="modal-navigation">
+              <button class="nav-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+          
+          <div class="modal-info">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            
+            <!-- Gallery grid for additional photos -->
+            <div class="modal-gallery" id="modal-gallery">
+              <!-- Additional photos will be populated here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">Scalingi</div>
+            <p class="footer-tagline" data-lang="footer-tagline">
+              Ospitalità autentica a due passi dal mare di Sperlonga
+            </p>
+            <div class="footer-social">
+              <!-- <a href="https://wa.me/393331234567" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a> -->
+              <a href="https://www.booking.com/hotel/it/scalingi-family-apartments.it.html" target="_blank" aria-label="Booking.com">
+                <i class="fas fa-bed"></i>
+              </a>
+              <a href="https://www.airbnb.it/h/trilocalescalingi" target="_blank" aria-label="Airbnb">
+                <i class="fab fa-airbnb"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-appartamenti">Appartamenti</h4>
+            <ul class="footer-links">
+              <li><a href="bilocale.html" data-lang="footer-bilocale">Bilocale</a></li>
+              <li><a href="trilocale.html" data-lang="footer-trilocale">Trilocale</a></li>
+              <li><a href="index.html#apartments" data-lang="footer-tutti">Tutti gli Appartamenti</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-informazioni">Informazioni</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#about" data-lang="footer-chi-siamo">Chi Siamo</a></li>
+              <li><a href="index.html#experience" data-lang="footer-esperienza">Esperienza Sperlonga</a></li>
+              <li><a href="index.html#reviews" data-lang="footer-recensioni">Recensioni</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4 data-lang="footer-contatti">Contatti</h4>
+            <div class="footer-contact">
+              <p data-lang="footer-indirizzo">
+                <i class="fas fa-map-marker-alt"></i>
+                Via Lepanto, Sperlonga (LT)
+              </p>
+              <!-- <p data-lang="footer-email">
+                <i class="fas fa-envelope"></i>
+                info@scalingiapartments.com
+              </p> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <p data-lang="footer-copyright">
+              © 2025 Scalingi Apartments. Tutti i diritti riservati.
+            </p>
+          </div>
+          <div class="footer-legal">
+            <span data-lang="footer-privacy">Privacy Policy</span>
+            <span data-lang="footer-terms">Termini di Servizio</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="script.js?v=20251207" defer></script>
+  <script src="app-config.js"></script>
+  <script src="booking.js" defer></script>
+  </body>
+</html>

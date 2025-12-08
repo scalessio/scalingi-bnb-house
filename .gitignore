@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+
+# ignore heavy asset folders; add with `git add -f` in batches
+src/assets/bilocale/*
+src/assets/trilocale/*
