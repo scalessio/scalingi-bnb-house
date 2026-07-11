@@ -77,8 +77,8 @@ class BookingSystem {
                 </div>
                 
                 <div class="booking-form-field">
-                  <label for="children" data-lang="booking-children-label">Bambini (2-12 anni) *</label>
-                  <select id="children" name="children" required>
+                  <label for="children" data-lang="booking-children-label">Bambini (2-12 anni)</label>
+                  <select id="children" name="children">
                     <option value="0" data-lang="booking-none">Nessuno</option>
                     <option value="1" data-lang="booking-1-child">1 Bambino</option>
                     <option value="2" data-lang="booking-2-children">2 Bambini</option>
@@ -87,8 +87,8 @@ class BookingSystem {
                 </div>
                 
                 <div class="booking-form-field">
-                  <label for="infants" data-lang="booking-infants-label">Neonati (0-2 anni) *</label>
-                  <select id="infants" name="infants" required>
+                  <label for="infants" data-lang="booking-infants-label">Neonati (0-2 anni)</label>
+                  <select id="infants" name="infants">
                     <option value="0" data-lang="booking-none">Nessuno</option>
                     <option value="1" data-lang="booking-1-infant">1 Neonato</option>
                     <option value="2" data-lang="booking-2-infants">2 Neonati</option>
@@ -98,8 +98,8 @@ class BookingSystem {
               
               <div class="booking-form-row">
                 <div class="booking-form-field">
-                  <label for="pets" data-lang="booking-pets-label">Animali Domestici *</label>
-                  <select id="pets" name="pets" required>
+                  <label for="pets" data-lang="booking-pets-label">Animali Domestici</label>
+                  <select id="pets" name="pets">
                     <option value="0" data-lang="booking-none">Nessuno</option>
                     <option value="1" data-lang="booking-1-pet">1 Animale</option>
                     <option value="2" data-lang="booking-2-pets">2 Animali</option>
@@ -132,6 +132,16 @@ class BookingSystem {
               <div class="booking-form-field">
                 <label for="special-requests" data-lang="booking-requests-label">Richieste speciali o note aggiuntive</label>
                 <textarea id="special-requests" name="specialRequests" rows="3" placeholder="Ad esempio 'Avremo bisogno della culla'" data-lang-placeholder="booking-requests-placeholder"></textarea>
+              </div>
+
+              <div class="booking-form-field booking-privacy">
+                <label class="booking-privacy-label">
+                  <input type="checkbox" id="privacy-consent" name="privacyConsent" required>
+                  <span data-lang="booking-privacy-ack">Ho letto l’informativa privacy e accetto il trattamento dei miei dati per la gestione della richiesta.</span>
+                </label>
+                <small class="booking-privacy-note" data-lang="booking-privacy-note">
+                  Leggi <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> e <a href="terms.html" target="_blank" rel="noopener">Termini di Servizio</a>.
+                </small>
               </div>
             </div>
 
@@ -465,6 +475,13 @@ class BookingSystem {
     // Validate phone
     if (!/^[\+]?[0-9\s\-\(\)]+$/.test(data.guestPhone)) {
       alert('Inserisci un numero di telefono valido');
+      return false;
+    }
+
+    // Privacy acknowledgment
+    const privacyConsent = document.getElementById('privacy-consent');
+    if (privacyConsent && !privacyConsent.checked) {
+      alert('Devi accettare l’informativa privacy per inviare la richiesta');
       return false;
     }
     

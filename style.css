@@ -2326,14 +2326,17 @@ body.loaded .hero-content {
   gap: var(--space-lg);
 }
 
-.footer-legal span {
+.footer-legal span,
+.footer-legal a {
   color: #999999;
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
-.footer-legal span:hover {
+.footer-legal span:hover,
+.footer-legal a:hover {
   color: var(--color-accent);
 }
 

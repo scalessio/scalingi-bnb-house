@@ -742,15 +742,15 @@ class ScalingiApp {
         'booking-2-adults': '2 Adulti',
         'booking-3-adults': '3 Adulti',
         'booking-4-adults': '4 Adulti',
-        'booking-children-label': 'Bambini (2-12 anni) *',
+        'booking-children-label': 'Bambini (2-12 anni)',
         'booking-none': 'Nessuno',
         'booking-1-child': '1 Bambino',
         'booking-2-children': '2 Bambini',
         'booking-3-children': '3 Bambini',
-        'booking-infants-label': 'Neonati (0-2 anni) *',
+        'booking-infants-label': 'Neonati (0-2 anni)',
         'booking-1-infant': '1 Neonato',
         'booking-2-infants': '2 Neonati',
-        'booking-pets-label': 'Animali Domestici *',
+        'booking-pets-label': 'Animali Domestici',
         'booking-1-pet': '1 Animale',
         'booking-2-pets': '2 Animali',
         'booking-contact-title': 'I tuoi dati di contatto',
@@ -764,7 +764,9 @@ class ScalingiApp {
         'booking-requests-label': 'Richieste speciali o note aggiuntive',
         'booking-requests-placeholder': 'Ad esempio \'Avremo bisogno della culla\'',
         'booking-cancel-btn': 'Annulla',
-        'booking-submit-btn': 'Invia Richiesta'
+        'booking-submit-btn': 'Invia Richiesta',
+        'booking-privacy-ack': 'Ho letto l’informativa privacy e accetto il trattamento dei miei dati per la gestione della richiesta.',
+        'booking-privacy-note': 'Leggi <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> e <a href="terms.html" target="_blank" rel="noopener">Termini di Servizio</a>.'
       },
       en: {
         // Navigation
@@ -1191,15 +1193,15 @@ class ScalingiApp {
         'booking-2-adults': '2 Adults',
         'booking-3-adults': '3 Adults',
         'booking-4-adults': '4 Adults',
-        'booking-children-label': 'Children (2-12 years) *',
+        'booking-children-label': 'Children (2-12 years)',
         'booking-none': 'None',
         'booking-1-child': '1 Child',
         'booking-2-children': '2 Children',
         'booking-3-children': '3 Children',
-        'booking-infants-label': 'Infants (0-2 years) *',
+        'booking-infants-label': 'Infants (0-2 years)',
         'booking-1-infant': '1 Infant',
         'booking-2-infants': '2 Infants',
-        'booking-pets-label': 'Pets *',
+        'booking-pets-label': 'Pets',
         'booking-1-pet': '1 Pet',
         'booking-2-pets': '2 Pets',
         'booking-contact-title': 'Your contact details',
@@ -1213,7 +1215,9 @@ class ScalingiApp {
         'booking-requests-label': 'Special requests or additional notes',
         'booking-requests-placeholder': 'For example \'We will need a crib\'',
         'booking-cancel-btn': 'Cancel',
-        'booking-submit-btn': 'Send Request'
+        'booking-submit-btn': 'Send Request',
+        'booking-privacy-ack': 'I have read the privacy notice and agree to the processing of my data for handling this request.',
+        'booking-privacy-note': 'Read the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>.'
       }
     };
 
