@@ -781,6 +781,8 @@ class ScalingiApp {
         'booking-requests-placeholder': 'Ad esempio \'Avremo bisogno della culla\'',
         'booking-cancel-btn': 'Annulla',
         'booking-submit-btn': 'Invia Richiesta',
+        'booking-submit-loading': 'Invio in corso...',
+        'booking-loading-note': 'La richiesta potrebbe richiedere fino a 2 minuti.',
         'booking-privacy-ack': 'Ho letto l’informativa privacy e accetto il trattamento dei miei dati per la gestione della richiesta.',
         'booking-privacy-note': 'Leggi <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> e <a href="terms.html" target="_blank" rel="noopener">Termini di Servizio</a>.'
       },
@@ -1232,6 +1234,8 @@ class ScalingiApp {
         'booking-requests-placeholder': 'For example \'We will need a crib\'',
         'booking-cancel-btn': 'Cancel',
         'booking-submit-btn': 'Send Request',
+        'booking-submit-loading': 'Sending...',
+        'booking-loading-note': 'The request may take up to 2 minutes.',
         'booking-privacy-ack': 'I have read the privacy notice and agree to the processing of my data for handling this request.',
         'booking-privacy-note': 'Read the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>.'
       }

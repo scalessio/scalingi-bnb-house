@@ -118,7 +118,15 @@ class BookingSystem {
                 </div>
                 
                 <div class="booking-form-field">
-                  <label for="guest-phone" data-lang="booking-phone-label">Numero WhatsApp *</label>
+                  <label for="guest-phone" class="booking-phone-label">
+                    <span class="booking-whatsapp-icon" aria-hidden="true">
+                      <svg viewBox="0 0 32 32" focusable="false">
+                        <path fill="#25D366" d="M16 3.2A12.7 12.7 0 0 0 5 22.3L3.5 28.8l6.7-1.6A12.7 12.7 0 1 0 16 3.2Z"/>
+                        <path fill="#fff" d="M23.4 19.1c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.7-.2-1 .2-.3.4-1.1 1.3-1.3 1.6-.2.3-.5.3-.9.1a10.3 10.3 0 0 1-5.1-4.5c-.3-.5 0-.7.2-1 .2-.2.4-.5.6-.7.2-.2.2-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-1-2.3-1.3-3.2-.4-.8-.7-.7-1-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.5 4.1 1.7 4.4c.2.3 3 4.8 7.4 6.5 3.7 1.5 4.5 1.2 5.3 1.1.8-.1 2.4-1 2.8-2 .4-.9.4-1.8.3-2-.1-.2-.4-.3-.8-.5Z"/>
+                      </svg>
+                    </span>
+                    <span data-lang="booking-phone-label">Numero WhatsApp *</span>
+                  </label>
                   <input type="tel" id="guest-phone" name="guestPhone" required placeholder="+39 333 1234567" data-lang-placeholder="booking-phone-placeholder">
                   <small data-lang="booking-phone-note">Ti contatteremo su WhatsApp per confermare la prenotazione</small>
                 </div>
@@ -144,6 +152,10 @@ class BookingSystem {
                 </small>
               </div>
             </div>
+
+            <p class="booking-loading-note" id="booking-loading-note" data-lang="booking-loading-note" hidden>
+              La richiesta potrebbe richiedere fino a 2 minuti.
+            </p>
 
             <div class="booking-form-actions">
               <button type="button" class="booking-btn-secondary" id="booking-cancel" data-lang="booking-cancel-btn">Annulla</button>
@@ -434,15 +446,24 @@ class BookingSystem {
     const submitBtn = document.getElementById('booking-submit');
     const btnText = submitBtn.querySelector('span');
     const btnIcon = submitBtn.querySelector('i');
+    const loadingNote = document.getElementById('booking-loading-note');
+    const currentLang = localStorage.getItem('preferredLanguage') || 'it';
+    const translations = window.scalingiApp?.translations?.[currentLang] || {};
     
     if (loading) {
       submitBtn.disabled = true;
       btnIcon.className = 'fas fa-spinner fa-spin';
-      btnText.textContent = 'Invio in corso...';
+      btnText.textContent = translations['booking-submit-loading'] || 'Invio in corso...';
+      if (loadingNote) {
+        loadingNote.hidden = false;
+      }
     } else {
       submitBtn.disabled = false;
       btnIcon.className = 'fas fa-paper-plane';
-      btnText.textContent = 'Invia Richiesta';
+      btnText.textContent = translations['booking-submit-btn'] || 'Invia Richiesta';
+      if (loadingNote) {
+        loadingNote.hidden = true;
+      }
     }
   }
 
