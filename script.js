@@ -140,24 +140,38 @@ class ScalingiApp {
     const navMenu = document.getElementById('nav-menu');
 
     if (navToggle && navMenu) {
+      const isMobileMenu = () => window.innerWidth <= 768;
+
       const closeMenu = () => {
         navToggle.classList.remove('active');
         navMenu.classList.remove('active');
         document.body.classList.remove('nav-open');
         document.body.style.overflow = '';
-        navMenu.style.left = '-100%';
-        navMenu.style.display = 'none';
+
+        if (isMobileMenu()) {
+          navMenu.style.left = '-100%';
+          navMenu.style.display = 'none';
+        } else {
+          navMenu.style.left = '';
+          navMenu.style.display = '';
+        }
       };
 
       // Calculate and set navbar height for mobile menu positioning
       const updateMenuPosition = () => {
         const navbar = document.querySelector('.navbar');
-        if (navbar && window.innerWidth <= 768) {
+        if (navbar && isMobileMenu()) {
           const navbarHeight = navbar.offsetHeight;
           navMenu.style.top = `${navbarHeight}px`;
           document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
         } else {
           navMenu.style.top = '';
+          navMenu.style.left = '';
+          navMenu.style.display = '';
+          navToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.classList.remove('nav-open');
+          document.body.style.overflow = '';
           document.documentElement.style.removeProperty('--navbar-height');
         }
       };
@@ -192,13 +206,15 @@ class ScalingiApp {
       const navLinks = navMenu.querySelectorAll('a');
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
-          closeMenu();
+          if (isMobileMenu() && navMenu.classList.contains('active')) {
+            closeMenu();
+          }
         });
       });
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
-        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        if (isMobileMenu() && navMenu.classList.contains('active') && !navToggle.contains(e.target) && !navMenu.contains(e.target)) {
           closeMenu();
         }
       });
