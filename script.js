@@ -347,10 +347,10 @@ class ScalingiApp {
         'nav-contact': 'Contatti',
         
         // Hero Section
-        'hero-discover': 'Scopri',
+        'hero-discover': 'Casa vacanze a',
         'hero-title': 'Sperlonga',
-        'hero-subtitle': 'ed i nostri appartamenti vicinissimi al mare',
-        'hero-cta': 'Esplora gli Appartamenti',
+        'hero-subtitle': 'Vicino al mare · Bilocale e trilocale con parcheggio privato',
+        'hero-cta': 'Richiedi disponibilità',
         
         // About Section
         'about-title-accent': 'Chi',
@@ -534,19 +534,19 @@ class ScalingiApp {
         // Contact Section
         'contact-title-accent': 'Mettiti In',
         'contact-title-main': 'Contatto',
-        'contact-description': 'Pronto a vivere la magia di Sperlonga? Contattaci per prenotare la tua fuga perfetta.',
+        'contact-description': 'Indicaci le date del soggiorno: ti risponderemo entro 24 ore, senza impegno.',
         'contact-address-label': 'Indirizzo',
         'contact-address': 'Via Lepanto 364, Sperlonga (LT), Italia  <br> Condominio "IRIS"',
         'contact-phone-label': 'Telefono',
         'contact-email-label': 'Email',
-        'contact-cta': 'Contatta Ora',
+        'contact-cta': 'Richiedi disponibilità',
         
         // Bilocale page translations
         'bilocale-hero-subtitle': 'Il Bilocale',
         'bilocale-hero-title': 'Family Duo',
         'bilocale-hero-description': 'Comfort smart a due passi dal mare',
         'bilocale-hero-cta': 'Scopri gli Spazi',
-        'bilocale-hero-book': 'Contatta Ora',
+        'bilocale-hero-book': 'Richiedi disponibilità',
         
         'overview-title-accent': 'Il Tuo',
         'overview-title-main': 'Bilocale',
@@ -656,7 +656,7 @@ class ScalingiApp {
         'trilocale-hero-title': 'Family Home',
         'trilocale-hero-description': 'Due camere da letto per un soggiorno perfetto',
         'trilocale-hero-cta': 'Scopri gli Spazi',
-        'trilocale-hero-book': 'Contatta Ora',
+        'trilocale-hero-book': 'Richiedi disponibilità',
         
         'trilocale-overview-title-accent': 'Il Tuo',
         'trilocale-overview-title-main': 'Trilocale',
@@ -743,10 +743,10 @@ class ScalingiApp {
         'contact-trilocale-description': 'Hai domande? Non preoccuparti, non stai bloccando questo appartamento né lo stai prenotando. Siamo qui per te.',
         
         // Booking modal translations
-        'booking-modal-title': 'Prenota il tuo soggiorno',
-        'booking-modal-subtitle': 'Non preoccuparti, non stai bloccando l\'appartamento né lo stai prenotando definitivamente. Ti risponderemo sicuramente nel giro di 24h.',
+        'booking-modal-title': 'Richiedi disponibilità',
+        'booking-modal-subtitle': 'La richiesta non blocca l’appartamento e non costituisce una prenotazione. Ti risponderemo entro 24 ore.',
         'booking-details-title': 'Dettagli Soggiorno',
-        'booking-apartment-label': 'Quale appartamento vuoi prenotare? *',
+        'booking-apartment-label': 'Per quale appartamento vuoi verificare la disponibilità? *',
         'booking-select-apartment': 'Seleziona appartamento',
         'booking-bilocale-option': 'Bilocale - Matrimoniale e Divano-Letto',
         'booking-trilocale-option': 'Trilocale - Matrimoniale e Camera con due letti',
@@ -774,7 +774,7 @@ class ScalingiApp {
         'booking-name-placeholder': 'Mario Rossi',
         'booking-phone-label': 'Numero WhatsApp *',
         'booking-phone-placeholder': '+39 333 1234567',
-        'booking-phone-note': 'Ti contatteremo su WhatsApp per confermare la prenotazione',
+        'booking-phone-note': 'Ti contatteremo su WhatsApp per rispondere alla richiesta',
         'booking-email-label': 'Email *',
         'booking-email-placeholder': 'mario.rossi@email.com',
         'booking-requests-label': 'Richieste speciali o note aggiuntive',
@@ -796,10 +796,10 @@ class ScalingiApp {
         'nav-contact': 'Contact',
         
         // Hero Section
-        'hero-discover': 'Discover',
+        'hero-discover': 'Holiday apartments in',
         'hero-title': 'Sperlonga',
-        'hero-subtitle': 'and our apartments by the sea',
-        'hero-cta': 'Explore Apartments',
+        'hero-subtitle': 'Near the sea · One- and two-bedroom apartments with private parking',
+        'hero-cta': 'Request availability',
         
         // About Section
         'about-title-accent': 'About',
@@ -980,12 +980,12 @@ class ScalingiApp {
         // Contact Section
         'contact-title-accent': 'Get In',
         'contact-title-main': 'Touch',
-        'contact-description': 'Ready to experience the magic of Sperlonga? Contact us to book your perfect getaway.',
+        'contact-description': 'Tell us your travel dates: we will reply within 24 hours, with no obligation.',
         'contact-address-label': 'Address',
         'contact-address': 'Via Lepanto 364, Sperlonga (LT), Italy  <br> "IRIS" Condominium',
         'contact-phone-label': 'Phone',
         'contact-email-label': 'Email',
-        'contact-cta': 'Contact Now',
+        'contact-cta': 'Request availability',
         // Safety card (Bilocale/Trilocale)
         'feature-safety-title': 'Safety',
         'safety-1': 'Carbon monoxide detector',
@@ -998,7 +998,7 @@ class ScalingiApp {
         'bilocale-hero-title': 'Family Duo',
         'bilocale-hero-description': 'Smart comfort steps from the sea',
         'bilocale-hero-cta': 'Discover the Spaces',
-        'bilocale-hero-book': 'Contact Now',
+        'bilocale-hero-book': 'Request availability',
         
         'overview-title-accent': 'Your',
         'overview-title-main': 'One-Bedroom Apartment',
@@ -1109,7 +1109,7 @@ class ScalingiApp {
         'trilocale-hero-title': 'Family Home',
         'trilocale-hero-description': 'Two bedrooms for a perfect stay',
         'trilocale-hero-cta': 'Discover the Spaces',
-        'trilocale-hero-book': 'Contact Now',
+        'trilocale-hero-book': 'Request availability',
         
         'trilocale-overview-title-accent': 'Your',
         'trilocale-overview-title-main': 'Three-Room Apartment',
@@ -1196,10 +1196,10 @@ class ScalingiApp {
         'contact-trilocale-description': 'Have questions? Don\'t worry, you\'re not blocking or definitively booking the apartment. We will definitely respond within 24 hours.',
         
         // Booking modal translations
-        'booking-modal-title': 'Book your stay',
-        'booking-modal-subtitle': 'Don\'t worry, you\'re not blocking or definitively booking the apartment. We will definitely respond within 24 hours.',
+        'booking-modal-title': 'Request availability',
+        'booking-modal-subtitle': 'This request does not hold the apartment or create a confirmed booking. We will reply within 24 hours.',
         'booking-details-title': 'Stay Details',
-        'booking-apartment-label': 'Which apartment do you want to book? *',
+        'booking-apartment-label': 'Which apartment would you like to check? *',
         'booking-select-apartment': 'Select apartment',
         'booking-bilocale-option': 'One-Bedroom - Double and Sofa Bed',
         'booking-trilocale-option': 'Three-Room - Double and Twin Bedroom',
@@ -1225,9 +1225,9 @@ class ScalingiApp {
         'booking-contact-title': 'Your contact details',
         'booking-name-label': 'Name and Surname *',
         'booking-name-placeholder': 'John Smith',
-        'booking-phone-label': 'WhatsApp Number *',
+        'booking-phone-label': 'WhatsApp number *',
         'booking-phone-placeholder': '+39 333 1234567',
-        'booking-phone-note': 'We will contact you on WhatsApp to confirm the booking',
+        'booking-phone-note': 'We will contact you on WhatsApp to reply to your request',
         'booking-email-label': 'Email *',
         'booking-email-placeholder': 'john.smith@email.com',
         'booking-requests-label': 'Special requests or additional notes',

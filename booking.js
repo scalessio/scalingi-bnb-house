@@ -30,8 +30,8 @@ class BookingSystem {
         <div class="booking-modal-overlay" id="booking-modal-overlay"></div>
         <div class="booking-modal-content">
           <div class="booking-modal-header">
-            <h2 id="booking-modal-title" data-lang="booking-modal-title">Prenota il tuo soggiorno</h2>
-            <p class="booking-modal-subtitle" data-lang="booking-modal-subtitle">Non preoccuparti, non stai bloccando l'appartamento né lo stai prenotando definitivamente. Ti risponderemo sicuramente nel giro di 24h.</p>
+            <h2 id="booking-modal-title" data-lang="booking-modal-title">Richiedi disponibilità</h2>
+            <p class="booking-modal-subtitle" data-lang="booking-modal-subtitle">La richiesta non blocca l’appartamento e non costituisce una prenotazione. Ti risponderemo entro 24 ore.</p>
             <button class="booking-modal-close" id="booking-modal-close">
               <i class="fas fa-times"></i>
             </button>
@@ -43,7 +43,7 @@ class BookingSystem {
               
               <div class="booking-form-row">
                 <div class="booking-form-field">
-                  <label for="apartment-type" data-lang="booking-apartment-label">Quale appartamento vuoi prenotare? *</label>
+                  <label for="apartment-type" data-lang="booking-apartment-label">Per quale appartamento vuoi verificare la disponibilità? *</label>
                   <select id="apartment-type" name="apartmentType" required>
                     <option value="" data-lang="booking-select-apartment">Seleziona appartamento</option>
                     <option value="Bilocale" data-lang="booking-bilocale-option">Bilocale - Matrimoniale e Divano-Letto</option>
@@ -128,7 +128,7 @@ class BookingSystem {
                     <span data-lang="booking-phone-label">Numero WhatsApp *</span>
                   </label>
                   <input type="tel" id="guest-phone" name="guestPhone" required placeholder="+39 333 1234567" data-lang-placeholder="booking-phone-placeholder">
-                  <small data-lang="booking-phone-note">Ti contatteremo su WhatsApp per confermare la prenotazione</small>
+                  <small data-lang="booking-phone-note">Ti contatteremo su WhatsApp per rispondere alla richiesta</small>
                 </div>
               </div>
               
@@ -174,30 +174,22 @@ class BookingSystem {
   }
 
   bindEvents() {
-    // Bind ai pulsanti "Prenota Ora" / "Book Now"
+    // Apre il modulo dai pulsanti dedicati alla richiesta di disponibilità.
     document.addEventListener('click', (e) => {
-      if (e.target.closest('[data-lang="contact-cta"], [data-lang="bilocale-hero-book"], [data-lang="trilocale-hero-book"], .cta-button.primary, .cta-button.secondary')) {
-        const link = e.target.closest('a');
-        const text = link?.textContent || '';
-        if (link && (
-          text.includes('Prenota') ||
-          text.includes('Book') ||
-          text.includes('Contatta') ||
-          text.includes('Contact')
-        )) {
-          e.preventDefault();
-          
-          // Determina il tipo di appartamento dalla pagina corrente
-          let apartmentType = null;
-          const currentPath = window.location.pathname;
-          if (currentPath.includes('bilocale')) {
-            apartmentType = 'Bilocale';
-          } else if (currentPath.includes('trilocale')) {
-            apartmentType = 'Trilocale';
-          }
-          
-          this.openModal(apartmentType);
+      const link = e.target.closest('[data-booking-trigger]');
+      if (link) {
+        e.preventDefault();
+
+        // Determina il tipo di appartamento dalla pagina corrente.
+        let apartmentType = null;
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('bilocale')) {
+          apartmentType = 'Bilocale';
+        } else if (currentPath.includes('trilocale')) {
+          apartmentType = 'Trilocale';
         }
+
+        this.openModal(apartmentType);
       }
     });
 
@@ -355,6 +347,7 @@ class BookingSystem {
     // Send email notification
     this.sendEmailNotification(data)
       .then(() => {
+        this.trackAvailabilityRequest();
         this.showSuccessMessage();
         setTimeout(() => this.closeModal(), 5000);
       })
@@ -521,39 +514,11 @@ class BookingSystem {
     return labels[field] || field;
   }
 
-  generateWhatsAppMessage(data) {
-    const nights = this.calculateNights();
-    const totalGuests = parseInt(data.adults) + parseInt(data.children || 0) + parseInt(data.infants || 0);
-    
-    let message = `🏖️ *RICHIESTA PRENOTAZIONE SCALINGI APARTMENTS*\n\n`;
-    
-    if (data.apartmentType) {
-      message += `🏠 *Appartamento:* ${data.apartmentType}\n`;
-    }
-    
-    message += `📅 *Check-in:* ${this.formatDate(data.checkinDate)}\n`;
-    message += `📅 *Check-out:* ${this.formatDate(data.checkoutDate)}\n`;
-    message += `🌙 *Notti:* ${nights}\n\n`;
-    
-    message += `👥 *Ospiti:*\n`;
-    message += `• Adulti: ${data.adults}\n`;
-    if (data.children > 0) message += `• Bambini (2-12 anni): ${data.children}\n`;
-    if (data.infants > 0) message += `• Neonati (0-2 anni): ${data.infants}\n`;
-    if (data.pets > 0) message += `• Animali domestici: ${data.pets}\n`;
-    message += `• *Totale: ${totalGuests} persone*\n\n`;
-    
-    message += `👤 *Contatto:*\n`;
-    message += `• Nome: ${data.guestName}\n`;
-    message += `• WhatsApp: ${data.guestPhone}\n`;
-    if (data.guestEmail) message += `• Email: ${data.guestEmail}\n`;
-    
-    if (data.specialRequests) {
-      message += `\n📝 *Richieste speciali:*\n${data.specialRequests}\n`;
-    }
-    
-    message += `\n✨ Grazie per aver scelto Scalingi Apartments!\nTi risponderemo al più presto per confermare la disponibilità.`;
-    
-    return message;
+  trackAvailabilityRequest() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'availability_request_submitted'
+    });
   }
 
   showSuccessMessage() {
@@ -561,7 +526,7 @@ class BookingSystem {
       <div class="booking-success">
         <i class="fas fa-check-circle"></i>
         <h3>Richiesta inviata con successo!</h3>
-        <p>Abbiamo ricevuto la tua richiesta di prenotazione.<br>Ti contatteremo entro 24 ore per confermare la disponibilità.</p>
+        <p>Abbiamo ricevuto la tua richiesta di disponibilità.<br>Ti risponderemo entro 24 ore.</p>
       </div>
     `;
     
