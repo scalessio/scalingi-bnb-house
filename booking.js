@@ -5,6 +5,7 @@
 
 // Base URL configurabile (via window.APP_CONFIG.apiBaseUrl oppure localhost di default)
 const API_BASE_URL = (window.APP_CONFIG?.apiBaseUrl || (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '')).replace(/\/$/, '');
+const MINIMUM_STAY_NIGHTS = 2;
 
 class BookingSystem {
   constructor() {
@@ -368,7 +369,7 @@ class BookingSystem {
       disable: [date => this.isRangeBlocked(checkinDate, this.toDateKey(date))],
       disableMobile: true,
       locale: this.getCalendarLocale(),
-      minDate: this.addDays(checkinDate, 1)
+      minDate: this.addDays(checkinDate, MINIMUM_STAY_NIGHTS)
     });
     this.setPickerDisabled(this.checkoutPicker, false);
   }
@@ -426,8 +427,8 @@ class BookingSystem {
     const translations = window.scalingiApp?.translations?.[localStorage.getItem('preferredLanguage') || 'it'] || {};
     const fallbackMessages = {
       'booking-availability-loading': 'Stiamo caricando la disponibilita...',
-      'booking-availability-select-apartment': 'Seleziona un appartamento per visualizzare le date disponibili.',
-      'booking-availability-ready': 'Calendario aggiornato. Le date grigie non sono disponibili.',
+      'booking-availability-select-apartment': 'Seleziona un appartamento per visualizzare le date disponibili. Il soggiorno minimo e di due notti.',
+      'booking-availability-ready': 'Calendario aggiornato. Le date grigie non sono disponibili. Il soggiorno minimo e di due notti.',
       'booking-availability-error': 'Non riusciamo a caricare la disponibilita. Riprova tra poco.'
     };
 
@@ -624,6 +625,12 @@ class BookingSystem {
     
     if (checkout <= checkin) {
       alert('La data di check-out deve essere successiva al check-in');
+      return false;
+    }
+
+    const nights = Math.round((checkout - checkin) / (1000 * 60 * 60 * 24));
+    if (nights < MINIMUM_STAY_NIGHTS) {
+      alert('Il soggiorno minimo e di due notti. Seleziona una data di check-out almeno due giorni dopo il check-in.');
       return false;
     }
     
