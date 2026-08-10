@@ -40,6 +40,14 @@ class BookingSystem {
           <form id="booking-form" class="booking-form">
             <div class="booking-form-section">
               <h3 data-lang="booking-details-title">Dettagli Soggiorno</h3>
+
+              <aside class="booking-availability-notice" aria-live="polite">
+                <i class="fas fa-sun" aria-hidden="true"></i>
+                <div>
+                  <strong data-lang="booking-availability-notice-title">Agosto al completo</strong>
+                  <p data-lang="booking-availability-notice-text">Stiamo raccogliendo richieste di disponibilità per settembre.</p>
+                </div>
+              </aside>
               
               <div class="booking-form-row">
                 <div class="booking-form-field">

@@ -647,7 +647,7 @@ class ScalingiApp {
         'footer-recensioni': 'Recensioni',
         'footer-contatti': 'Contatti',
         'footer-indirizzo': 'Via Lepanto 364<br>Sperlonga (LT), Italia<br>Condominio "IRIS"',
-        'footer-copyright': '© 2024 Scalingi Apartments. Tutti i diritti riservati.',
+        'footer-copyright': '© 2026 Scalingi Apartments. Tutti i diritti riservati.',
         'footer-privacy': 'Privacy Policy',
         'footer-terms': 'Termini di Servizio',
         
@@ -745,6 +745,8 @@ class ScalingiApp {
         // Booking modal translations
         'booking-modal-title': 'Richiedi disponibilità',
         'booking-modal-subtitle': 'La richiesta non blocca l’appartamento e non costituisce una prenotazione. Ti risponderemo entro 24 ore.',
+        'booking-availability-notice-title': 'Agosto al completo',
+        'booking-availability-notice-text': 'Stiamo raccogliendo richieste di disponibilità per settembre.',
         'booking-details-title': 'Dettagli Soggiorno',
         'booking-apartment-label': 'Per quale appartamento vuoi verificare la disponibilità? *',
         'booking-select-apartment': 'Seleziona appartamento',
@@ -1100,7 +1102,7 @@ class ScalingiApp {
         'footer-recensioni': 'Reviews',
         'footer-contatti': 'Contact',
         'footer-indirizzo': 'Via Lepanto 364<br>Sperlonga (LT), Italy<br>"IRIS" Condominium',
-        'footer-copyright': '© 2024 Scalingi Apartments. All rights reserved.',
+        'footer-copyright': '© 2026 Scalingi Apartments. All rights reserved.',
         'footer-privacy': 'Privacy Policy',
         'footer-terms': 'Terms of Service',
         
@@ -1198,6 +1200,8 @@ class ScalingiApp {
         // Booking modal translations
         'booking-modal-title': 'Request availability',
         'booking-modal-subtitle': 'This request does not hold the apartment or create a confirmed booking. We will reply within 24 hours.',
+        'booking-availability-notice-title': 'August is fully booked',
+        'booking-availability-notice-text': 'We are currently accepting availability requests for September.',
         'booking-details-title': 'Stay Details',
         'booking-apartment-label': 'Which apartment would you like to check? *',
         'booking-select-apartment': 'Select apartment',
