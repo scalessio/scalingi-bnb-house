@@ -6,13 +6,14 @@
 // Base URL configurabile (via window.APP_CONFIG.apiBaseUrl oppure localhost di default)
 const API_BASE_URL = (window.APP_CONFIG?.apiBaseUrl || (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '')).replace(/\/$/, '');
 
-// Regola temporanea: agosto 2026 e' al completo.
-const FIRST_AVAILABLE_CHECKIN = '2026-09-01';
-
 class BookingSystem {
   constructor() {
     this.modal = null;
     this.currentApartment = null;
+    this.availability = null;
+    this.checkinPicker = null;
+    this.checkoutPicker = null;
+    this.availabilityRequestId = 0;
     this.init();
     this.initEmailJS();
   }
@@ -44,13 +45,10 @@ class BookingSystem {
             <div class="booking-form-section">
               <h3 data-lang="booking-details-title">Dettagli Soggiorno</h3>
 
-              <aside class="booking-availability-notice" aria-live="polite">
-                <i class="fas fa-sun" aria-hidden="true"></i>
-                <div>
-                  <strong data-lang="booking-availability-notice-title">Agosto al completo</strong>
-                  <p data-lang="booking-availability-notice-text">Stiamo raccogliendo richieste di disponibilità per settembre.</p>
-                </div>
-              </aside>
+              <p id="booking-availability-status" class="booking-availability-status" role="status" aria-live="polite" aria-busy="true">
+                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                <span data-lang="booking-availability-loading">Stiamo caricando la disponibilità...</span>
+              </p>
               
               <div class="booking-form-row">
                 <div class="booking-form-field">
@@ -66,12 +64,12 @@ class BookingSystem {
               <div class="booking-form-row">
                 <div class="booking-form-field">
                   <label for="checkin-date" data-lang="booking-checkin-label">Data Check-in *</label>
-                  <input type="date" id="checkin-date" name="checkinDate" required>
+                  <input type="text" id="checkin-date" name="checkinDate" required disabled>
                 </div>
                 
                 <div class="booking-form-field">
                   <label for="checkout-date" data-lang="booking-checkout-label">Data Check-out *</label>
-                  <input type="date" id="checkout-date" name="checkoutDate" required>
+                  <input type="text" id="checkout-date" name="checkoutDate" required disabled>
                 </div>
               </div>
 
@@ -215,13 +213,10 @@ class BookingSystem {
       this.handleFormSubmission();
     });
 
-    // Date validation
-    document.getElementById('checkin-date').addEventListener('change', () => this.validateDates());
-    document.getElementById('checkout-date').addEventListener('change', () => this.validateDates());
-
     // Apartment selection
     document.getElementById('apartment-type').addEventListener('change', (e) => {
       this.currentApartment = e.target.value;
+      this.updateDatePickers();
     });
 
     // ESC key to close
@@ -234,13 +229,6 @@ class BookingSystem {
 
   openModal(apartmentType = null) {
     this.currentApartment = apartmentType;
-    
-    // Prevent August bookings directly in the native date picker.
-    const checkinInput = document.getElementById('checkin-date');
-    const checkoutInput = document.getElementById('checkout-date');
-    const earliestCheckin = this.getEarliestCheckinDate();
-    checkinInput.min = earliestCheckin;
-    checkoutInput.min = this.addDays(earliestCheckin, 1);
     
     // Pre-select apartment type if provided
     const apartmentSelect = document.getElementById('apartment-type');
@@ -258,14 +246,11 @@ class BookingSystem {
     
     this.modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    this.loadAvailability();
     
-    // Focus first input
+    // Focus the apartment selector while dates are loading.
     setTimeout(() => {
-      if (apartmentType) {
-        document.getElementById('checkin-date').focus();
-      } else {
-        document.getElementById('apartment-type').focus();
-      }
+      document.getElementById('apartment-type').focus();
     }, 100);
   }
   
@@ -299,48 +284,156 @@ class BookingSystem {
   }
 
   closeModal() {
+    this.availabilityRequestId += 1;
+    this.destroyDatePickers();
     this.modal.classList.remove('active');
     document.body.style.overflow = '';
     this.resetForm();
   }
 
-  validateDates() {
-    const checkinDate = document.getElementById('checkin-date').value;
-    const checkoutDate = document.getElementById('checkout-date').value;
-    const checkinInput = document.getElementById('checkin-date');
-    const checkoutInput = document.getElementById('checkout-date');
-    const earliestCheckin = this.getEarliestCheckinDate();
+  async loadAvailability() {
+    const requestId = ++this.availabilityRequestId;
+    this.availability = null;
+    this.destroyDatePickers();
+    this.setDateInputsDisabled(true);
+    this.setAvailabilityStatus('booking-availability-loading', 'spinner', true);
 
-    checkinInput.min = earliestCheckin;
-    
-    if (checkinDate) {
-      if (checkinDate < earliestCheckin) {
-        checkinInput.value = '';
-        checkoutInput.value = '';
-        checkoutInput.min = this.addDays(earliestCheckin, 1);
-        return;
-      }
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/availability`);
+      if (!response.ok) throw new Error('Disponibilita non disponibile');
 
-      // Set minimum checkout date to day after checkin
-      const minCheckout = this.addDays(checkinDate, 1);
-      checkoutInput.min = minCheckout;
-      
-      // Clear checkout if it's before new minimum
-      if (checkoutDate && checkoutDate < minCheckout) {
-        checkoutInput.value = '';
-      }
+      const data = await response.json();
+      if (!data.apartments || requestId !== this.availabilityRequestId || !this.modal.classList.contains('active')) return;
+
+      this.availability = data.apartments;
+      this.updateDatePickers();
+    } catch (error) {
+      if (requestId !== this.availabilityRequestId) return;
+      console.error('Errore caricamento disponibilita:', error);
+      this.setDateInputsDisabled(true);
+      this.setAvailabilityStatus('booking-availability-error', 'warning', false, true);
     }
   }
 
-  getEarliestCheckinDate() {
-    const today = new Date().toISOString().split('T')[0];
-    return today > FIRST_AVAILABLE_CHECKIN ? today : FIRST_AVAILABLE_CHECKIN;
+  updateDatePickers() {
+    this.destroyDatePickers();
+
+    if (!this.availability) {
+      this.setDateInputsDisabled(true);
+      return;
+    }
+
+    if (!this.currentApartment) {
+      this.setDateInputsDisabled(true);
+      this.setAvailabilityStatus('booking-availability-select-apartment', 'calendar', false);
+      return;
+    }
+
+    if (!window.flatpickr) {
+      this.setDateInputsDisabled(true);
+      this.setAvailabilityStatus('booking-availability-error', 'warning', false, true);
+      return;
+    }
+
+    const checkinInput = document.getElementById('checkin-date');
+    const checkoutInput = document.getElementById('checkout-date');
+    checkinInput.value = '';
+    checkoutInput.value = '';
+
+    this.checkinPicker = window.flatpickr(checkinInput, {
+      altFormat: 'j F Y',
+      altInput: true,
+      dateFormat: 'Y-m-d',
+      disable: [date => this.isDateBlocked(this.toDateKey(date))],
+      disableMobile: true,
+      locale: this.getCalendarLocale(),
+      minDate: 'today',
+      onChange: (_, checkinDate) => this.createCheckoutPicker(checkinDate)
+    });
+
+    this.setDateInputsDisabled(false);
+    checkoutInput.disabled = true;
+    this.setAvailabilityStatus('booking-availability-ready', 'calendar', false);
+  }
+
+  createCheckoutPicker(checkinDate) {
+    const checkoutInput = document.getElementById('checkout-date');
+    if (this.checkoutPicker) this.checkoutPicker.destroy();
+
+    checkoutInput.value = '';
+    this.checkoutPicker = window.flatpickr(checkoutInput, {
+      altFormat: 'j F Y',
+      altInput: true,
+      dateFormat: 'Y-m-d',
+      disable: [date => this.isRangeBlocked(checkinDate, this.toDateKey(date))],
+      disableMobile: true,
+      locale: this.getCalendarLocale(),
+      minDate: this.addDays(checkinDate, 1)
+    });
+    this.setPickerDisabled(this.checkoutPicker, false);
   }
 
   addDays(dateString, days) {
     const date = new Date(`${dateString}T00:00:00Z`);
     date.setUTCDate(date.getUTCDate() + days);
     return date.toISOString().split('T')[0];
+  }
+
+  toDateKey(date) {
+    return [date.getFullYear(), String(date.getMonth() + 1).padStart(2, '0'), String(date.getDate()).padStart(2, '0')].join('-');
+  }
+
+  getBlockedRanges() {
+    return this.availability?.[this.currentApartment]?.blockedRanges || [];
+  }
+
+  isDateBlocked(date) {
+    return this.isRangeBlocked(date, this.addDays(date, 1));
+  }
+
+  isRangeBlocked(start, end) {
+    return this.getBlockedRanges().some(range => start < range.end && end > range.start);
+  }
+
+  getCalendarLocale() {
+    const language = localStorage.getItem('preferredLanguage') || 'it';
+    return language === 'it' && window.flatpickr.l10ns.it ? 'it' : 'default';
+  }
+
+  destroyDatePickers() {
+    if (this.checkinPicker) this.checkinPicker.destroy();
+    if (this.checkoutPicker) this.checkoutPicker.destroy();
+    this.checkinPicker = null;
+    this.checkoutPicker = null;
+  }
+
+  setDateInputsDisabled(disabled) {
+    ['checkin-date', 'checkout-date'].forEach(id => {
+      document.getElementById(id).disabled = disabled;
+    });
+    this.setPickerDisabled(this.checkinPicker, disabled);
+    this.setPickerDisabled(this.checkoutPicker, disabled);
+  }
+
+  setPickerDisabled(picker, disabled) {
+    if (!picker) return;
+    picker.input.disabled = disabled;
+    if (picker.altInput) picker.altInput.disabled = disabled;
+  }
+
+  setAvailabilityStatus(key, icon, loading, isError = false) {
+    const status = document.getElementById('booking-availability-status');
+    const translations = window.scalingiApp?.translations?.[localStorage.getItem('preferredLanguage') || 'it'] || {};
+    const fallbackMessages = {
+      'booking-availability-loading': 'Stiamo caricando la disponibilita...',
+      'booking-availability-select-apartment': 'Seleziona un appartamento per visualizzare le date disponibili.',
+      'booking-availability-ready': 'Calendario aggiornato. Le date grigie non sono disponibili.',
+      'booking-availability-error': 'Non riusciamo a caricare la disponibilita. Riprova tra poco.'
+    };
+
+    status.classList.toggle('is-error', isError);
+    status.setAttribute('aria-busy', String(loading));
+    status.innerHTML = `<i class="fas fa-${icon === 'spinner' ? 'spinner fa-spin' : icon === 'warning' ? 'exclamation-triangle' : 'calendar-alt'}" aria-hidden="true"></i><span>${translations[key] || fallbackMessages[key]}</span>`;
   }
 
   calculateNights() {
@@ -388,6 +481,12 @@ class BookingSystem {
       })
       .catch((error) => {
         console.error('Error sending email:', error);
+        if (error.status === 409) {
+          alert(error.message);
+          this.setLoadingState(false);
+          this.loadAvailability();
+          return;
+        }
         this.showErrorMessage();
         this.setLoadingState(false);
       });
@@ -424,7 +523,9 @@ class BookingSystem {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || 'Errore invio email');
+        const error = new Error(errorData.error || 'Errore invio email');
+        error.status = response.status;
+        throw error;
       }
 
       const result = await response.json();
@@ -516,8 +617,8 @@ class BookingSystem {
       return false;
     }
 
-    if (data.checkinDate < this.getEarliestCheckinDate()) {
-      alert('Agosto è al completo. Seleziona una data di check-in dal 1 settembre 2026.');
+    if (!this.availability || this.isRangeBlocked(data.checkinDate, data.checkoutDate)) {
+      alert('Le date selezionate non sono disponibili. Scegli un altro periodo.');
       return false;
     }
     
