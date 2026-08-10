@@ -6,6 +6,9 @@
 // Base URL configurabile (via window.APP_CONFIG.apiBaseUrl oppure localhost di default)
 const API_BASE_URL = (window.APP_CONFIG?.apiBaseUrl || (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '')).replace(/\/$/, '');
 
+// Regola temporanea: agosto 2026 e' al completo.
+const FIRST_AVAILABLE_CHECKIN = '2026-09-01';
+
 class BookingSystem {
   constructor() {
     this.modal = null;
@@ -232,9 +235,12 @@ class BookingSystem {
   openModal(apartmentType = null) {
     this.currentApartment = apartmentType;
     
-    // Set minimum date to today
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('checkin-date').min = today;
+    // Prevent August bookings directly in the native date picker.
+    const checkinInput = document.getElementById('checkin-date');
+    const checkoutInput = document.getElementById('checkout-date');
+    const earliestCheckin = this.getEarliestCheckinDate();
+    checkinInput.min = earliestCheckin;
+    checkoutInput.min = this.addDays(earliestCheckin, 1);
     
     // Pre-select apartment type if provided
     const apartmentSelect = document.getElementById('apartment-type');
@@ -301,19 +307,40 @@ class BookingSystem {
   validateDates() {
     const checkinDate = document.getElementById('checkin-date').value;
     const checkoutDate = document.getElementById('checkout-date').value;
+    const checkinInput = document.getElementById('checkin-date');
     const checkoutInput = document.getElementById('checkout-date');
+    const earliestCheckin = this.getEarliestCheckinDate();
+
+    checkinInput.min = earliestCheckin;
     
     if (checkinDate) {
+      if (checkinDate < earliestCheckin) {
+        checkinInput.value = '';
+        checkoutInput.value = '';
+        checkoutInput.min = this.addDays(earliestCheckin, 1);
+        return;
+      }
+
       // Set minimum checkout date to day after checkin
-      const minCheckout = new Date(checkinDate);
-      minCheckout.setDate(minCheckout.getDate() + 1);
-      checkoutInput.min = minCheckout.toISOString().split('T')[0];
+      const minCheckout = this.addDays(checkinDate, 1);
+      checkoutInput.min = minCheckout;
       
       // Clear checkout if it's before new minimum
-      if (checkoutDate && new Date(checkoutDate) <= new Date(checkinDate)) {
+      if (checkoutDate && checkoutDate < minCheckout) {
         checkoutInput.value = '';
       }
     }
+  }
+
+  getEarliestCheckinDate() {
+    const today = new Date().toISOString().split('T')[0];
+    return today > FIRST_AVAILABLE_CHECKIN ? today : FIRST_AVAILABLE_CHECKIN;
+  }
+
+  addDays(dateString, days) {
+    const date = new Date(`${dateString}T00:00:00Z`);
+    date.setUTCDate(date.getUTCDate() + days);
+    return date.toISOString().split('T')[0];
   }
 
   calculateNights() {
@@ -486,6 +513,11 @@ class BookingSystem {
     
     if (checkin < today) {
       alert('La data di check-in non può essere nel passato');
+      return false;
+    }
+
+    if (data.checkinDate < this.getEarliestCheckinDate()) {
+      alert('Agosto è al completo. Seleziona una data di check-in dal 1 settembre 2026.');
       return false;
     }
     
