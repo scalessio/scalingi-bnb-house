@@ -911,8 +911,9 @@ ul, ol {
   margin-bottom: var(--space-md);
   padding: 0.65rem 1rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-  box-shadow: 0 8px 18px rgba(255, 107, 53, 0.28);
+  border: 1px solid #7f280f;
+  background: #a63b1f;
+  box-shadow: 0 5px 12px rgba(127, 40, 15, 0.22);
   color: #fff;
   font-size: 1rem;
   font-weight: 800;
