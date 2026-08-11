@@ -1592,6 +1592,25 @@ body.loaded .hero-content {
 
 /* Reviews Section - Mobile Responsive */
 @media (max-width: 768px) {
+  #reviews .reviews-slider {
+    gap: 0;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1px;
+    overscroll-behavior-x: contain;
+  }
+
+  #reviews .review-card {
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    min-width: 0 !important;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  #reviews .review-text {
+    overflow-wrap: anywhere;
+  }
+
   .review-card {
     min-width: 280px !important;
     padding: var(--space-lg) !important;
