@@ -899,6 +899,38 @@ ul, ol {
   background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
 }
 
+.host-card {
+  background: linear-gradient(135deg, #fff8f1, var(--color-background));
+  border: 1px solid rgba(255, 107, 53, 0.25);
+}
+
+.host-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  color: var(--color-accent-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.host-card h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+}
+
+.host-card .review-text {
+  font-style: normal;
+}
+
+.host-card .review-text::before {
+  content: none;
+}
+
 .review-stars {
   display: flex;
   gap: var(--space-xs);
