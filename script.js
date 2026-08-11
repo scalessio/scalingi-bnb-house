@@ -1464,7 +1464,9 @@ class PerformanceOptimizer {
   setupPreloading() {
     // Preload critical images
     const criticalImages = [
-      'src/assets/sperlonga_hero_cartoon.jpeg',
+      window.matchMedia('(max-width: 768px)').matches
+        ? 'src/assets/sperlonga_hero_mobile.png'
+        : 'src/assets/sperlonga_hero_cartoon.jpeg',
       'src/assets/bilocale/copertina.jpeg',
       'src/assets/trilocale/copertina.jpeg'
     ];

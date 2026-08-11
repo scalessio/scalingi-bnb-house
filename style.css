@@ -369,9 +369,14 @@ ul, ol {
   z-index: -2;
 }
 
+.hero-background picture,
 .hero-background img {
   width: 100%;
   height: 100%;
+  display: block;
+}
+
+.hero-background img {
   object-fit: cover;
 }
 
