@@ -909,11 +909,19 @@ ul, ol {
   align-items: center;
   gap: var(--space-xs);
   margin-bottom: var(--space-md);
-  color: var(--color-accent-dark);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  box-shadow: 0 8px 18px rgba(255, 107, 53, 0.28);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.host-card-badge i {
+  font-size: 1.1rem;
 }
 
 .host-card h3 {
