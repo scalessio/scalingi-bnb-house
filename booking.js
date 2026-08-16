@@ -427,14 +427,20 @@ class BookingSystem {
     const translations = window.scalingiApp?.translations?.[localStorage.getItem('preferredLanguage') || 'it'] || {};
     const fallbackMessages = {
       'booking-availability-loading': 'Stiamo caricando la disponibilita...',
+      'booking-availability-loading-note': 'Il caricamento puo richiedere fino a 2 minuti.',
       'booking-availability-select-apartment': 'Seleziona un appartamento per visualizzare le date disponibili. Il soggiorno minimo e di due notti.',
       'booking-availability-ready': 'Calendario aggiornato. Le date grigie non sono disponibili. Il soggiorno minimo e di due notti.',
       'booking-availability-error': 'Non riusciamo a caricare la disponibilita. Riprova tra poco.'
     };
 
+    const message = translations[key] || fallbackMessages[key];
+    const loadingNote = key === 'booking-availability-loading'
+      ? (translations['booking-availability-loading-note'] || fallbackMessages['booking-availability-loading-note'])
+      : '';
+
     status.classList.toggle('is-error', isError);
     status.setAttribute('aria-busy', String(loading));
-    status.innerHTML = `<i class="fas fa-${icon === 'spinner' ? 'spinner fa-spin' : icon === 'warning' ? 'exclamation-triangle' : 'calendar-alt'}" aria-hidden="true"></i><span>${translations[key] || fallbackMessages[key]}</span>`;
+    status.innerHTML = `<i class="fas fa-${icon === 'spinner' ? 'spinner fa-spin' : icon === 'warning' ? 'exclamation-triangle' : 'calendar-alt'}" aria-hidden="true"></i><span class="booking-availability-copy">${message}${loadingNote ? `<small class="booking-availability-note">${loadingNote}</small>` : ''}</span>`;
   }
 
   calculateNights() {

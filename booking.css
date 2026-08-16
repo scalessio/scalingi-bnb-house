@@ -146,9 +146,17 @@
   font-size: 1.1rem;
 }
 
-.booking-availability-status span {
+.booking-availability-status > span {
   font-size: 0.86rem;
   line-height: 1.45;
+}
+
+.booking-availability-note {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .booking-form-field input:disabled,
